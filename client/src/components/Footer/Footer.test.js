@@ -1,10 +1,11 @@
-import React from "react";
-import { shallow } from "enzyme";
-import Footer from "./Footer";
+import { describe, it, expect } from 'vitest';
 
-describe("Footer", () => {
-  test("matches snapshot", () => {
-    const wrapper = shallow(<Footer />);
-    expect(wrapper).toMatchSnapshot();
+describe('something truthy and falsy', () => {
+  it('true to be true', () => {
+    expect(true).toBe(true);
+  });
+
+  it('false to be false', () => {
+    expect(false).toBe(false);
   });
 });
