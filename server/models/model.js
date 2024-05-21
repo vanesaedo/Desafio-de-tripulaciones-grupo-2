@@ -1,5 +1,12 @@
 const queries = require("../queries/queries.js"); // Queries SQL
 
+/**
+ * Encontrar usuarios por email.
+ *
+ * @function getUserByEmail
+ * @param {string} email - El correo del usuario.
+ * @return {Promise<string>} Los datos del usuario.
+ */
 // GET
 const getUserByEmail = async (email) => {
   let client, result;

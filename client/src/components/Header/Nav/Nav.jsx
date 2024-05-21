@@ -1,7 +1,21 @@
 import React from "react";
 
 const Nav = () => {
-  return <div>Nav</div>;
+
+  /**
+   * Componente Nav
+   * 
+   * @component
+   * @returns {JSX.Element} El Nav renderizado
+   */
+
+  return <nav>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </nav>;
 };
 
 export default Nav;
