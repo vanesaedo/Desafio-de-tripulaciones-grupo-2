@@ -4,7 +4,8 @@
   "main": "app.js",
   "scripts": {
     "test": "jest --detectOpenHandles",
-    "start": "nodemon app.js",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "generate-docs": "jsdoc -c /path/to/my/conf.js"
   },
   "author": "",
