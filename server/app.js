@@ -1,3 +1,7 @@
+/**
+ * @author Desafío de tripulaciones Grupo 2 
+ */
+
 //require("dotenv").config();
 const express = require("express");
 const app = express();
@@ -22,7 +26,7 @@ app.get("/", (req, res) => {
 });
 
 //API
-app.use('/api/user',userRoutes);
+app.use('/api/user', userRoutes);
 
 
 app.use(error404);
