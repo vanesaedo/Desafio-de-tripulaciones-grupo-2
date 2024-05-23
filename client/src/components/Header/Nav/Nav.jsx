@@ -9,11 +9,9 @@ const Nav = () => {
    * @returns {JSX.Element} El Nav renderizado
    */
 
-  return <nav>
+  return <nav className="nav">
     <ul>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li>Logout</li>
     </ul>
   </nav>;
 };
