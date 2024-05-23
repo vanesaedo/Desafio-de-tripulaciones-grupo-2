@@ -1,0 +1,13 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height:12vh;
+    width:100vw;
+    background-color: white;
+
+    &>img {
+        width: 30%;
+        height: 30%;
+    }
+}
