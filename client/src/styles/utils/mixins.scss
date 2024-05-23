@@ -1,0 +1,12 @@
+@mixin centered-column-layout {
+    //reutilizacion de codigo de estilos
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin form ($color) {
+    -webkit-box-shadow: 10px 10px 5px 0px $color;
+    -moz-box-shadow: 10px 10px 5px 0px $color;
+    box-shadow: 10px 10px 5px 0px $color;
+}
