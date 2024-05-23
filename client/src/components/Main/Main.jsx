@@ -3,7 +3,7 @@ import Login from "./Login";
 import Home from "./Home";
 
 const Main = () => {
-  return <main>
+  return <main className="main">
     <Login />
     <Home />
   </main>;
