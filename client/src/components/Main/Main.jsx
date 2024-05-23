@@ -1,13 +1,12 @@
 import React from "react";
 import Login from "./Login";
-import DatosPersonales from "./DatosPersonales/DatosPersonales";
-import Buscador from "./Buscador/Buscador";
+import Home from "./Home";
+
 
 const Main = () => {
-  return <main>
+  return <main className="main">
     <Login />
-    <DatosPersonales/>
-    <Buscador/>
+    <Home />
   </main>;
 };
 
