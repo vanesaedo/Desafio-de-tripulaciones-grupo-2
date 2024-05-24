@@ -2,9 +2,9 @@ import React from "react";
 
 const Login = () => {
   return <form action="" className="login-form">
-    <label htmlFor="">EMAIL</label>
+    <label>EMAIL</label>
     <input type="" name="" />
-    <label htmlFor="">CONTRASEÑA</label>
+    <label>CONTRASEÑA</label>
     <input type="text" />
     <button>ACCEDER</button>
   </form>;
