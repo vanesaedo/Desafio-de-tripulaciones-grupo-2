@@ -56,7 +56,7 @@ const DatosPersonales = () => {
       <label for="fecharegistro">Fecha de registro:</label>
       <input type="text" name="fecharegistro" />
 
-      <label for="persona">Persona que te recomendó Beyond education:</label>
+      <label for="persona">Persona que te recomendó Beyond Education:</label>
       <input type="text" name="persona" />
  
         </div>
