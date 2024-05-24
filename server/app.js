@@ -15,7 +15,7 @@ const port = process.env.PORT || 5000;
 
 app.use(express.json()); // Para parsear el body de las peticiones
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'client/build'))); //se lanza la primera vez que se visita. SIRVE LA APLICACION DE REACT
+app.use(express.static(path.join(__dirname, 'client/dist'))); //se lanza la primera vez que se visita. SIRVE LA APLICACION DE REACT
 
 // Rutas
 const userRoutes = require("./routes/routes") // CREO QUE SE PUEDE BORRAR
