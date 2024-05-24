@@ -1,8 +1,37 @@
 .nav {
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: right;
+    color:white;
+   
+
+    
     &>ul {
-        &>li {
-            list-style: none;
-            color: black;
-        }
+
+        display:flex;
+        justify-content: left;
+        list-style: none;
+        gap:40px; 
+
+      
+        
     }
+    &li {
+        color: white;
+       
+    }
+
+   .login_btn {
+    background-color:$morado;
+    color:white;
+    font-size: medium;
+    height: 36px; 
+    padding: 6px 20px;
+    border: .5px solid white;
+    margin-left:40px;
+    border-radius:6px; 
+    
+   }
+   
 }

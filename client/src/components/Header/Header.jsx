@@ -1,11 +1,15 @@
 import React from "react";
 import Nav from "./Nav";
-import Logo from "../../assets/BE_logo.png";
+import Logo from "../../assets/logo.png";
 
 const Header = () => {
-  return <header>
-    <img src={Logo} alt="" />
+  return <header className="header">
+    <div>
+    <img src={Logo} alt="logo beyond education" />
+    
+    </div>
     <Nav />
+         
   </header>;
 };
 

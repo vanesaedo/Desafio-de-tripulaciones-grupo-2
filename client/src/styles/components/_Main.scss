@@ -1,7 +1,10 @@
 .main{
-    min-height:76vh;
+    height:80vh;
     width:100vw;
     display: flex;
     flex-direction: column;  
     align-items: center;  
+    background-image: url("../assets/dot_background_.png");
+    background-repeat: repeat;
+    background-size: 10px;
 }

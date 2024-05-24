@@ -5,14 +5,22 @@ import Servicios from "./Servicios"
 import DatosPersonales from "./DatosPersonales";
 import Interacciones from "./Interacciones";
 
+
 const Home = () => {
-  return <section className="home">
-    <Buscador />
-    <Pestañas />
+
+  return <>
+  <section className="home">
+    <nav>
+      <Buscador />
+      <Pestañas />
+  </nav>
+     
     <DatosPersonales />
     <Servicios />
     <Interacciones />
-  </section>;
+    
+ </section>
+  </>
 };
 
 export default Home;

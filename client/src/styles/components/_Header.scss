@@ -1,13 +1,27 @@
 header {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height:12vh;
-    width:100vw;
-    background-color: white;
+   justify-content: space-between;
+    flex-direction: row;
+    color:white;
+    gap:16px; 
+    min-height:8vh;
+    width:100%;
+    background-color: $morado;
+    padding:8px 40px;
+   
 
-    &>img {
-        width: 30%;
-        height: 30%;
+    &> div > img {
+      max-height: 8vh;
+    }
+
+    &>div {
+
+        display:flex;
+        gap:16px; 
+        align-items: center;
+    }
+s
+    .manuscrita {
+        font-family:'Nothing You Could Do';
     }
 }

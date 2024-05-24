@@ -10,10 +10,8 @@ const Nav = () => {
    */
 
   return <nav className="nav">
-    <ul>
-      <li>Logout</li>
-    </ul>
+    
+    <button className="login_btn">Login</button>
   </nav>;
 };
-
 export default Nav;
