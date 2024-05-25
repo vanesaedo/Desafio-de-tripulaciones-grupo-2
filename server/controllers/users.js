@@ -17,23 +17,28 @@ const login = async (req, res) => {
     try {
         const { email, password } = req.body;
         const user = await usersModels.login(email, password); // comprueba si existe el usuario
-        console.log("controlador: "+user);
+        console.log("controlador: ", user);
+        
         if (user.length > 0) {
-            const token = createToken({ email: user[0].email, role: user[0].role }); //se crea Token con email y rol del usuario, al devolver un array, usamos la posicion 0
-            console.log("controlador2: "+token);
+            const token = createToken({ email: user[0].email, role: user[0].role }); //se crea Token con email y rol del usuario
+            console.log("controlador2: ", token);
+            
             res.status(200)
                 .set('Authorization', `Bearer ${token}`) // damos la respuesta con encabezado
-                .cookie('access_token', token) // creamos la cookie con el token
-                .json({ role: user[0].role }) //cuerpo de la respuesta, el rol del usuario
-                .send()
+                .cookie('access_token', token, { 
+                    httpOnly: true, 
+                    secure: process.env.NODE_ENV === 'production', // Asegúrate de que solo se envíen cookies seguras en producción
+                    sameSite: 'strict' 
+                }) // creamos la cookie con el token
+                .json({ role: user[0].role }); //cuerpo de la respuesta, el rol del usuario
         } else {
             res.status(400).json({ msg: "wrong credentials" });
         }
-
     } catch (error) {
         res.status(400).json({ msg: error.message });
     }
 };
+
 
 const logout = async (req, res) => {
     try {
