@@ -1,0 +1,13 @@
+services:
+  - name: client
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    env: 
+      - key: NODE_ENV
+        value: production
+  - name: server
+    buildCommand: npm install
+    startCommand: npm start
+    env: 
+      - key: NODE_ENV
+        value: production
