@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Home from "../Home/Home"
 
 const Client = () => {
 
@@ -23,7 +24,7 @@ const Client = () => {
   }, [])
 
   return <div>
-    <h1>Client</h1>
+    <Home/>
 
     {message ? <h3>{message}</h3> : ""}
 
