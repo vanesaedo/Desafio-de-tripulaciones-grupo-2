@@ -1,0 +1,11 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+.buscador {
+  @include centered-row-layout;
+  background-color:white;
+  align-items: center;
+  height: 12%;
+  color:white;
+
+}

@@ -10,7 +10,7 @@ const Interacciones = () => {
       </div>
     </article>
 
-    <form action="">
+    <form className="form-interacciones" action="">
       <div>
         <div>
           <label>Motivo: </label>
