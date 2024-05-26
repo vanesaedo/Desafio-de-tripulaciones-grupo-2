@@ -17,7 +17,7 @@ const Pestañas = ({ setPestañaEnUso }) => {
       <button onClick={() => clickPestaña("campañasContratadas")} className="boton-campañas-contratadas">CAMPAÑAS CONTRATADAS</button>
     </nav>
     </section>
-  </>
+  </> 
 };
 
 export default Pestañas;

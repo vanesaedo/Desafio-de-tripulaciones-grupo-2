@@ -1,8 +1,9 @@
 import React from "react";
 
+
 const DatosPersonales = () => {
   return <>
-    <section>
+    <section className="datospersonales">
       <h3>Datos personales</h3>
 
       <form id="datospersonales">

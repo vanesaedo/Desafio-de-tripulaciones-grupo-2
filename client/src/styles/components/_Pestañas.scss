@@ -13,12 +13,12 @@
     align-items: center;
     justify-content: flex-end;
     height: 60px;
-    padding:0px 20px;    
+      
     
 
     &>button {
-        height: 40px;
-        border: 0px 0px 4px 0px;
+        @include button-normal-purple;
+        
     }   background-color:$light-purple;
 
 }
