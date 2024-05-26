@@ -7,9 +7,10 @@
 @mixin purple-single-button  {
     background-color:$purple;
     color:white;
-    font-size: medium;
+    font-size:medium;
+    font-weight:bolder;
     height: 36px; 
-    border: 0.5px solid white;
+    border: 0 solid white;
     border-radius:6px; 
 }
 

@@ -1,17 +1,17 @@
-
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-   padding-left: 4vw;
-   padding-right:4vw;
-   min-height: 6vh;
-    width:100%;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    min-height: 6vh;
+    width: 100%;
     background-color: $purple;
-   
   
 
+
+
     &>img {
-       height: 40px;
+        height: 40px;
     }
 }
