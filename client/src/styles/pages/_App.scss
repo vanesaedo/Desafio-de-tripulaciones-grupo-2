@@ -1,7 +1,13 @@
 @import '../utils/mixins.scss';
 @import '../utils/variables.scss';
 
-
+* {
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+    font-family: 'Lato';
+    border:1px solid red;
+}
 
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -15,5 +21,13 @@
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale; 
+}
+
+#root {
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
 }

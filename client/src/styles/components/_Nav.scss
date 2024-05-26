@@ -1,8 +1,12 @@
+@import '../utils/mixins.scss';
+
+
 .nav {
-    &>ul {
-        &>li {
-            list-style: none;
-            color: black;
-        }
-    }
+    @include nav-right-purple;
+   
 }
+    
+   .login_button {
+    @include purple-single-button;
+
+   }

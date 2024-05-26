@@ -4,9 +4,35 @@
     flex-direction: column;
     align-items: center;
 }
-
-@mixin form ($color) {
-    -webkit-box-shadow: 10px 10px 5px 0px $color;
-    -moz-box-shadow: 10px 10px 5px 0px $color;
-    box-shadow: 10px 10px 5px 0px $color;
+@mixin purple-single-button  {
+    background-color:$purple;
+    color:white;
+    font-size: medium;
+    height: 36px; 
+    border: 0.5px solid white;
+    border-radius:6px; 
 }
+
+
+@mixin nav-right-purple {
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-end;
+    align-items: center;
+    min-height: 8vh;
+    background-color:$purple;
+   
+}
+
+@mixin nav-left-purple {
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: flex-start;
+    color:white;
+    min-height: 8vh;
+    background-color:$purple;
+
+   
+}
+   

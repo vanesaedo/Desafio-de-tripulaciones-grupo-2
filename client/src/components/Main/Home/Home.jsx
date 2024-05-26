@@ -7,11 +7,15 @@ import Interacciones from "./Interacciones";
 
 const Home = () => {
   return <section className="home">
+    <nav>
     <Buscador />
+    </nav>
+    <article>
     <Pestañas />
     <DatosPersonales />
     <Servicios />
     <Interacciones />
+    </article>
   </section>;
 };
 
