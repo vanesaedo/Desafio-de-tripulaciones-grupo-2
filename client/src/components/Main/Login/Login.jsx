@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ const Login = ({ logged, role }) => {
   const [message, setMessage] = useState("");
   const [passwordMessage, setPasswordMessage] = useState("");
   const [emailMessage, setEmailMessage] = useState("");
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Usar useNavigate en lugar de Redirect
 
   useEffect(() => {
     const testConnection = async () => {
@@ -42,14 +42,14 @@ const Login = ({ logged, role }) => {
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
-  const handleSignUp = async () => {
+  /* const handleSignUp = async () => {
     try {
       const request = await axios.post('api/users/signup', { email, password, role: "client" });
       setMessage(request.data.msg);
     } catch (error) {
       console.log(error.message);
     }
-  };
+  }; */
 
   const handleLogin = async () => {
     try {
@@ -60,6 +60,13 @@ const Login = ({ logged, role }) => {
       logged.setLogged(true);
       role.setRole(response.data.role);
       setMessage(`Authorisation Header ${authHeader}`);
+
+      // Redirigir al usuario según su rol después de iniciar sesión correctamente
+      if (response.data.role === "admin") {
+        navigate("/admin"); // Utilizar navigate para redirigir al usuario
+      } else if (response.data.role === "client") {
+        navigate("/employee"); // Utilizar navigate para redirigir al usuario
+      }
     } catch (error) {
       console.log(error.message);
     }
