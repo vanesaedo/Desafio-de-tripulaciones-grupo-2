@@ -29,11 +29,11 @@
         &>div {
             display: flex;
             justify-content: space-evenly;
-            margin-bottom: 5px;
+            
 
             &>div {
                 &>label {
-                    margin-right: 5px;
+                   padding-right: 5px;
                 }
             }
         }

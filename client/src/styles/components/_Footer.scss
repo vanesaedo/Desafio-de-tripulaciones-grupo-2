@@ -5,11 +5,10 @@
     @include centered-column-layout;
     text-align: center;
     color:white;
-    border:1px solid black;
     height: 14vh;
     vertical-align: bottom;
     position:fixed;
-    width:100vw; 
+    width:100%; 
     background-color:$purple;
 
 }

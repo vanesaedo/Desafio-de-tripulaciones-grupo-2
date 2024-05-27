@@ -4,23 +4,26 @@
 .cabecera_estudiante {
     @include centered-row-layout;
     justify-content: space-between;
-    background-color:$light-purple;
-
+    background-color: $light-purple;
+    text-align:center;
+    gap:12px;
 
 }
+
 .pestañas {
     @include centered-row-layout;
     align-items: center;
     justify-content: flex-end;
-    height: 60px;
-      
-    
+    height: 100%;
 
     &>button {
-        height:100%; 
-        padding: auto  20px; 
-    }   background-color:$light-purple;
+       @include button-normal-purple
 
+    }
+
+   
+
+    
 }
 
 .nombre_estudiante {
@@ -28,7 +31,4 @@
     justify-content: flex-start;
     text-align: left;
 }
-
-
-
     
