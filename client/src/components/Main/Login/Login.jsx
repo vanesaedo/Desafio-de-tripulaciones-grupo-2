@@ -42,15 +42,6 @@ const Login = ({ logged, role }) => {
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
-  /* const handleSignUp = async () => {
-    try {
-      const request = await axios.post('api/users/signup', { email, password, role: "client" });
-      setMessage(request.data.msg);
-    } catch (error) {
-      console.log(error.message);
-    }
-  }; */
-
   const handleLogin = async () => {
     try {
       const response = await axios.post('api/users/login', { email, password });
