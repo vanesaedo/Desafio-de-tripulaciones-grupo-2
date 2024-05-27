@@ -1,20 +1,6 @@
 const queries = {
     getUsers: `
-    SELECT
-	facturas.id_alumno,
-	CONCAT(alumnos.nombre, ' ', alumnos.apellidos) AS nombre_completo,
-	facturas.id_factura,
-	lineas_factura.fecha AS fecha_factura,
-	facturas.precio AS precio_factura,
-	lineas_factura.id_linea AS id_linea_servicio,
-	lineas_factura.precio AS precio_por_servicio,
-	servicios_especificos.nombre_servicio
-FROM facturas
-INNER JOIN lineas_factura ON lineas_factura.id_factura = facturas.id_factura
-INNER JOIN servicios_especificos ON servicios_especificos.id_servicioes = lineas_factura.id_servicioes
-INNER JOIN servicios_generales ON servicios_generales.id_serviciog = servicios_especificos.id_serviciog
-INNER JOIN alumnos ON facturas.id_alumno = alumnos.id_alumno	
-WHERE alumnos.dni = '12345678A'
+    SELECT * FROM alumnos
     `,
     getPersonalData: `
     SELECT
