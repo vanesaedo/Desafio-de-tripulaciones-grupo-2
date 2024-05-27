@@ -9,4 +9,4 @@ const pool = new Pool({
     password: process.env.DB__PASSWORD,
 })
 
-module.exports = pool; 
+module.exports = pool;
