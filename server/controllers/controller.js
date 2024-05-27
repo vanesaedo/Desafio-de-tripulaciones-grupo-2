@@ -1,53 +1,43 @@
 const user = require('../models/model.js'); // Importar el modelo de la BBDD
 
 
-// GET http://localhost:3000/user?email=hola@gmail.com --> por email
-const getUser = async (req, res) => {
-    let users;
-    console.log(req.query.email);
-    users = await user.getUserByEmail(req.query.email);
-    res.status(200).json(users); 
-}
+// GET http://localhost:3000/api/user/datosPersonales?dni='12345678A'
+const getPersonalData = async (req, res) => {
+    const dni = req.query.dni; // {dni}
+    let info = await user.getPersonalData(dni);
+    res.status(200).json(info); // [] con todos los datos del cliente
+};
 
+const getServices = async (req, res) => {
+    const dni = req.query.dni; // {dni}
+    let info = await user.getServices(dni);
+    res.status(200).json(info); // [] con todos los datos del cliente
+};
 
-// Crear entry por email
-const createUser = async (req, res) => {
-    const newUser = req.body; 
-    const response = await user.createUser(newUser);
-    res.status(201).json(newUser);
-}
+const getInteractions = async (req, res) => {
+    const dni = req.query.dni; // {dni}
+    let info = await user.getInteractions(dni);
+    res.status(200).json(info); // [] con todos los datos del cliente
+};
 
+const getContractedCampaigns = async (req, res) => {
+    const dni = req.query.dni; // {dni}
+    let info = await user.getContractedCampaigns(dni);
+    res.status(200).json(info); // [] con todos los datos del cliente
+};
 
-const updateUser = async (req, res) => {
-    const modifiedUser = req.body; 
-    const response = await user.updateUser(modifiedUser);
+const getUsers = async (req, res) => {
+    const users = await user.getUsers();
     res.status(200).json({
-        "items_updated": response,
-        data: modifiedUser
-    },{
-        message: `usuario creado: ${req.query.email}`
+        data: users
     });
 }
 
-const deleteUser = async (req, res) => {
-    let users;
-    if (req.query.email) {
-        users = await user.getUserByEmail(req.query.email);
-        if (users.length > 0) {
-            deleted = await user.deleteUser(req.query.email); 
-            res.status(200).json({message: `Se ha borrado ${req.query.email}`})
-        }else{
-            res.status(404).json("No se ha encontrado el User")
-        }
-    }
-    else {
-        res.status(404).json("No se ha encontrado el User")
-    }
-}
 
 module.exports = {
-    getUser,
-    createUser,
-    updateUser,
-    deleteUser
+    getPersonalData,
+    getServices,
+    getInteractions,
+    getContractedCampaigns,
+    getUsers,
 }

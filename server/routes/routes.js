@@ -8,9 +8,10 @@ const express = require('express');
 const userController = require("../controllers/controller");
 const router = express.Router();
 
-router.get('/', userController.getUser);
-router.post('/', userController.createUser);
-router.put('/', userController.updateUser);
-router.delete('/', userController.deleteUser);
+router.get('/datosPersonales', userController.getPersonalData);
+router.get('/servicios', userController.getServices);
+router.get('/interacciones', userController.getInteractions);
+router.get('/contratos', userController.getContractedCampaigns);
+router.get('/all', userController.getUsers);
 
 module.exports = router;
