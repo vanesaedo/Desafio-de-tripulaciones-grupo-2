@@ -4,22 +4,75 @@ const queries = require("../queries/queries.js"); // Queries SQL
 /**
  * Encontrar clientes por DNI.
  *
- * @function getUserByDNI
- * @param {string} DNI - El DNI del cliente.
+ * @function getPersonalData
+ * @param {string} dni - El DNI del cliente.
  * @return {Promise<string>} Los datos del cliente.
  */
 // GET
-const getUserByDNI = async (DNI) => {
+const getPersonalData = async (dni) => {
   let client, result;
   try {
     client = await pool.connect(); // Espera a abrir conexion
-    const data = await client.query(queries.getUserByDNI, [DNI]);
+    const data = await client.query(queries.getPersonalData, [dni]);
     result = data.rows;
   } catch (err) {
     console.log(err);
     throw err;
   } finally {
-    client.release();
+    if (client) {
+      client.release();
+    }
+  }
+  return result;
+};
+
+const getServices = async (dni) => {
+  let client, result;
+  try {
+    client = await pool.connect(); // Espera a abrir conexion
+    const data = await client.query(queries.getServices, [dni]);
+    result = data.rows;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  } finally {
+    if (client) {
+      client.release();
+    }
+  }
+  return result;
+};
+
+const getInteractions = async (dni) => {
+  let client, result;
+  try {
+    client = await pool.connect(); // Espera a abrir conexion
+    const data = await client.query(queries.getInteractions, [dni]);
+    result = data.rows;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  } finally {
+    if (client) {
+      client.release();
+    }
+  }
+  return result;
+};
+
+const getContractedCampaigns = async (dni) => {
+  let client, result;
+  try {
+    client = await pool.connect(); // Espera a abrir conexion
+    const data = await client.query(queries.getContractedCampaigns, [dni]);
+    result = data.rows;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  } finally {
+    if (client) {
+      client.release();
+    }
   }
   return result;
 };
@@ -43,7 +96,10 @@ const getUsers = async () => {
 };
 
 const user = {
-  getUserByDNI,
+  getPersonalData,
+  getServices,
+  getInteractions,
+  getContractedCampaigns,
   getUsers,
 };
 
