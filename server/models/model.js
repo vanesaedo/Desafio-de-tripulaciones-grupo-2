@@ -1,18 +1,19 @@
+const pool = require("../config/db_pgsql.js");
 const queries = require("../queries/queries.js"); // Queries SQL
 
 /**
- * Encontrar usuarios por email.
+ * Encontrar clientes por DNI.
  *
- * @function getUserByEmail
- * @param {string} email - El correo del usuario.
- * @return {Promise<string>} Los datos del usuario.
+ * @function getUserByDNI
+ * @param {string} DNI - El DNI del cliente.
+ * @return {Promise<string>} Los datos del cliente.
  */
 // GET
-const getUserByEmail = async (email) => {
+const getUserByDNI = async (DNI) => {
   let client, result;
   try {
     client = await pool.connect(); // Espera a abrir conexion
-    const data = await client.query(queries.getUserByEmail, [email]);
+    const data = await client.query(queries.getUserByDNI, [DNI]);
     result = data.rows;
   } catch (err) {
     console.log(err);
@@ -23,78 +24,27 @@ const getUserByEmail = async (email) => {
   return result;
 };
 
-
-// CREATE
-/* {
-  "name": "angelillo",
-  "surname": "perez",
-  "email": "adri@thebridgeschool.es",
-  "password": "123456"
-} */
-const createUser = async (user) => {
-  const { name, surname, email, password } = user;
+// Get all users
+const getUsers = async () => {
   let client, result;
   try {
-    client = await pool.connect(); // Espera a abrir conexion
-    const data = await client.query(queries.createUser, [
-      name,
-      surname,
-      email,
-      password,
-    ]);
-    result = data.rowCount;
-  } catch (err) {
-    console.log(err);
-    throw err;
-  } finally {
-    client.release();
-  }
-  return result;
-};
-
-//UPDATE
-const updateUser = async (user) => {
-  const { name, surname, email, password} = user;
-  let client, result;
-  try {
-    client = await pool.connect(); // Espera a abrir conexion
-    const data = await client.query(queries.updateUser, [
-      name,
-      surname,
-      email,
-      password,
-    ]);
-    result = data.rowCount;
-  } catch (err) {
-    console.log(err);
-    throw err;
-  } finally {
-    client.release();
-  }
-  return result;
-};
-
-
-const deleteUser = async (email) => {
-  let client, result;
-  try {
-    client = await pool.connect(); // Espera a abrir conexion
-    const data = await client.query(queries.deleteUser, [email]);
+    client = await pool.connect();
+    const data = await client.query(queries.getUsers);
     result = data.rows;
   } catch (err) {
     console.log(err);
     throw err;
   } finally {
-    client.release();
+    if (client) {
+      client.release();
+    }
   }
   return result;
 };
 
 const user = {
-  getUserByEmail,
-  createUser,
-  updateUser,
-  deleteUser
+  getUserByDNI,
+  getUsers,
 };
 
 module.exports = user;
