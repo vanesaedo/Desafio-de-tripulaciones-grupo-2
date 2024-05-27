@@ -1,5 +1,5 @@
 const pool = require("../config/db_pgsql.js");
-const queries = require("../queries/queries.js"); // Queries SQL
+const queries = require("../queries/info.queries.js"); // Queries SQL
 
 /**
  * Encontrar clientes por DNI.

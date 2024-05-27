@@ -5,7 +5,7 @@
  */
 
 const express = require('express');
-const userController = require("../controllers/controller");
+const userController = require("../controllers/info.controller");
 const router = express.Router();
 
 router.get('/datosPersonales', userController.getPersonalData);
