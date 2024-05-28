@@ -8,7 +8,10 @@ const queries = require("../queries/info.queries.js"); // Queries SQL
  * @param {string} dni - El DNI del cliente.
  * @return {Promise<string>} Los datos del cliente.
  */
-// GET
+
+
+/********************* GET *********************/
+
 const getPersonalData = async (dni) => {
   let client, result;
   try {
@@ -77,6 +80,31 @@ const getContractedCampaigns = async (dni) => {
   return result;
 };
 
+
+
+/********************* POST *********************/
+
+const postInteractions = async (entry) => {
+  const { id_factura, fecha, motivo, comentarios } = entry;
+  let client, result;
+  try {
+    client = await pool.connect(); // Espera a abrir conexion
+    const data = await client.query(queries.insertInteractions, [
+      id_factura,
+      fecha,
+      motivo,
+      comentarios,
+    ]);
+    result = data.rowCount;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  } finally {
+    client.release();
+  }
+  return result;
+};
+
 // Get all users
 const getUsers = async () => {
   let client, result;
@@ -100,6 +128,7 @@ const user = {
   getServices,
   getInteractions,
   getContractedCampaigns,
+  postInteractions,
   getUsers,
 };
 
