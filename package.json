@@ -5,7 +5,13 @@
     "client": "cd client && npm run build && npm run start"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@fontsource/lato": "^5.0.21",
+    "@mui/material": "^5.15.18",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+    "concurrently": "^8.2.2",
     "dotenv": "^16.4.5",
-    "concurrently": "^8.2.2"
+    "styled-components": "^6.1.11"
   }
 }
