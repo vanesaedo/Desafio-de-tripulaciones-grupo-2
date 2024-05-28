@@ -5,6 +5,12 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
 
   function clickWindows(windows) {
     setWindowsEnUso(windows);
+    setClienteBuscado({
+      datosPersonales: "",
+      servicios: "",
+      interacciones: "",
+      contratos: ""
+    })
     const url = `http://localhost:5000/api/info/${windows}?dni=${DNIbuscado}`
     console.log(windows)
     try {
