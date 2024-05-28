@@ -2,11 +2,10 @@ import * as React from 'react';
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import {validateEmail, validatePassword} from "../../../utils/regex";
 import UserImage from '../../../assets/user_azul.png';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-
-
 
 
 const Login = ({ logged, role }) => {
@@ -29,8 +28,7 @@ const Login = ({ logged, role }) => {
   }, []);
 
   useEffect(() => {
-    const emailValidation = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailValidation.test(email) && email.length > 0) {
+    if (!validateEmail(email) && email.length > 0) {
       setEmailMessage("Email must have a valid format");
     } else {
       setEmailMessage("");
@@ -38,8 +36,7 @@ const Login = ({ logged, role }) => {
   }, [email]);
 
   useEffect(() => {
-    const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{9,}$/;
-    if (!passwordValidation.test(password) && password.length > 0) {
+    if (!validatePassword(password) && password.length > 0) {
       setPasswordMessage("Password must contain lowercase, uppercase, digit, and special character");
     } else {
       setPasswordMessage("");
