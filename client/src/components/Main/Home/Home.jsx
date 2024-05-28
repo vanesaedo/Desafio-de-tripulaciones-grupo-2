@@ -21,7 +21,7 @@ const Home = () => {
     <Windows setWindowsEnUso={setWindowsEnUso} DNIbuscado={DNIbuscado} setClienteBuscado={setClienteBuscado} />
     {windowsEnUso == "datosPersonales"? <DatosPersonales clienteBuscado={clienteBuscado.datosPersonales} /> : <></>}
     {windowsEnUso == "servicios"? <Servicios clienteBuscado={clienteBuscado.servicios} /> : <></>}
-    {windowsEnUso == "interacciones"? <Interacciones clienteBuscado={clienteBuscado.interacciones} /> : <></>}
+    {windowsEnUso == "interacciones"? <Interacciones clienteBuscado={clienteBuscado.interacciones} setClienteBuscado={setClienteBuscado} DNIbuscado={DNIbuscado} /> : <></>}
     {windowsEnUso == "contratos"? <Contratos clienteBuscado={clienteBuscado.contratos} /> : <></>}
   </section>;
 };
