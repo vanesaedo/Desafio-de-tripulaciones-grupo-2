@@ -1,7 +1,11 @@
+import * as React from 'react';
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import UserImage from '../../../assets/user_azul.png';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+
 
 
 
@@ -89,12 +93,20 @@ const Login = ({ logged, role }) => {
   }
 
   return (
+ 
     <div className="login-form">
+      <h4>Agenda</h4>
+      <h4>Avisos</h4>
       <h4>Login</h4>
       <input className="input-general" type="email" placeholder="email" onChange={handleEmail} />
       <input className="input-general" type="password" placeholder="password" onChange={handlePassword} />
       <a href="#">¿Has olvidado tu contraseña?</a>
-      <button onClick={handleLogin}>Login</button>
+     {/*  <Stack spacing={1} direction="row">
+      
+      <Button className="login_button" onClick={handleLogin} variant="contained">Login</Button>
+    
+    </Stack> */}
+ <button className="login_button" onClick={handleLogin}>Login</button>
     </div>
   );
 };
