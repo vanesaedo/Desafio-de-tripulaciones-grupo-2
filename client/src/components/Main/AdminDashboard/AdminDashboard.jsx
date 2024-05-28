@@ -118,10 +118,6 @@ const AdminDashboard = () => {
        <frame src='https://desafiotripulacionesds.streamlit.app/?embedded=true' />
     </frameset>
 
-    <frameset>
-      <frame src='https://desafiotripulacionesds.streamlit.app/?embedded=true' />
-    </frameset>
-
     <div className="sign-form">
       <h3>Alta Empleado</h3>
       <input type="text" placeholder="nombre" name="nombre" onChange={handleNombre} /><br />
