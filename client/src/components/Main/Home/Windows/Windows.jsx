@@ -6,9 +6,9 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
   function clickWindows(windows) {
     setWindowsEnUso(windows);
     const url = `http://localhost:5000/api/info/${windows}?dni=${DNIbuscado}`
-    console.log(Windows)
+    console.log(windows)
     try {
-      console.log(Windows)
+      console.log(windows)
       const res = axios.get(url);
       if(windows == "datosPersonales") {
         res.then(response => setClienteBuscado(prev => {
@@ -37,7 +37,7 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
       <div className="nombre_estudiante">
         <h3>Nombre del alumno</h3>
       </div>
-      <nav className="Windows">
+      <nav className="windows">
         <button onClick={() => clickWindows("datosPersonales")} className="boton-datos-personales">DATOS PERSONALES</button>
         <button onClick={() => clickWindows("servicios")} className="boton-servicios">SERVICIOS</button>
         <button onClick={() => clickWindows("interacciones")} className="boton-interacciones">INTERACCIONES</button>

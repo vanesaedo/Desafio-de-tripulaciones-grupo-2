@@ -1,6 +1,6 @@
 import React from "react";
 
-const Servicios = () => {
+const Servicios = ({ clienteBuscado }) => {
   return <section className="servicios">
     <h1>Servicios</h1>
     <article>

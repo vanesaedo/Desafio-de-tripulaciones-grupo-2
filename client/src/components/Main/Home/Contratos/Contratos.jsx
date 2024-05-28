@@ -1,6 +1,6 @@
 import React from "react";
 
-const Contratos = () => {
+const Contratos = ({ clienteBuscado }) => {
   return <div>Contratos</div>;
 };
 
