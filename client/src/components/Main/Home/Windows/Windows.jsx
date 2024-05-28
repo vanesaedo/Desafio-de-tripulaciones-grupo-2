@@ -10,6 +10,7 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
     try {
       console.log(windows)
       const res = axios.get(url);
+      console.log(res)
       if(windows == "datosPersonales") {
         res.then(response => setClienteBuscado(prev => {
           return {...prev, datosPersonales: response.data}
