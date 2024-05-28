@@ -76,9 +76,9 @@
 
 @mixin content-information {
     display:flex;
-    justify-content: center;
-    
+    justify-content: start;
     padding:20px; 
-    width:80%; 
+    width:90%; 
+    color:$strong-blue;
 
 }

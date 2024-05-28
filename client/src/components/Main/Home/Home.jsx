@@ -17,16 +17,18 @@ const Home = () => {
   });
 
   return <section className="home">
-    <div className="Buscador">
+    <div className="Buscador">  
     <Buscador setDNIbuscado={setDNIbuscado} />
     </div>
-      <nav className="cabecera_estudiante">
+      <nav className="cabecera-estudiante">
     <Windows setWindowsEnUso={setWindowsEnUso} DNIbuscado={DNIbuscado} setClienteBuscado={setClienteBuscado} />
     </nav>
+    <article className="contenido-windows">
     {windowsEnUso == "datosPersonales"? <DatosPersonales clienteBuscado={clienteBuscado.datosPersonales} /> : <></>}
     {windowsEnUso == "servicios"? <Servicios clienteBuscado={clienteBuscado.servicios} /> : <></>}
     {windowsEnUso == "interacciones"? <Interacciones clienteBuscado={clienteBuscado.interacciones} /> : <></>}
     {windowsEnUso == "contratos"? <Contratos clienteBuscado={clienteBuscado.contratos} /> : <></>}
+    </article>
   </section>;
 };
 

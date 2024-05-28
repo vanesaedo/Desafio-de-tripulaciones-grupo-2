@@ -4,11 +4,11 @@
 .footer{
     visibility:hidden;
     @include centered-column-layout;
-   
-    color:white;
+    color:$strong-blue;
     height: 14vh;
     vertical-align: bottom;
     width:100vw; 
     background-color:$strong-blue;
 
 }
+

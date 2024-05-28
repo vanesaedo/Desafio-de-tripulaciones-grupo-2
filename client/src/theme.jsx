@@ -6,11 +6,13 @@ const theme = createTheme({
     MuiTabs: {
       styleOverrides: {
         root: {
-          width:'100%', // Ajusta el ancho del contenedor de tabs
+          width:'100vw', // Ajusta el ancho del contenedor de tabs
           justifyContent:'center', // Centra las tabs horizontalmente
+          backgroundColor:'#0228643f'
+          
         },
         indicator: {
-          backgroundColor: '#fff', // Color de la línea del scroller
+          backgroundColor: '#002766', // Color de la línea del scroller
         },
       },
     },
