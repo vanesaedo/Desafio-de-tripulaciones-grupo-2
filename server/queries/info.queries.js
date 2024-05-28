@@ -59,8 +59,9 @@ const queries = {
     getInteractions: `
     SELECT
         CONCAT(alumnos.nombre, ' ', alumnos.apellidos) AS nombre_completo,
+        facturas.id_factura,
         historico_contactos.motivo,
-        historico_contactos.fecha,
+        TO_CHAR(historico_contactos.fecha, 'DD-MM-YYYY') AS fecha,
         historico_contactos.comentarios AS observaciones
     FROM historico_contactos
     INNER JOIN facturas ON facturas.id_factura = historico_contactos.id_factura
@@ -83,6 +84,10 @@ const queries = {
     INNER JOIN servicios_generales ON servicios_generales.id_serviciog = servicios_especificos.id_serviciog
     INNER JOIN alumnos ON facturas.id_alumno = alumnos.id_alumno	
     WHERE alumnos.dni = $1
+    `,
+    insertInteractions: `
+    INSERT INTO "historico_contactos" (id_factura, fecha, motivo, comentarios) 
+    VALUES ($1, TO_DATE($2, 'DD/MM/YYYY'), $3, $4)
     `
 };
 module.exports = queries;

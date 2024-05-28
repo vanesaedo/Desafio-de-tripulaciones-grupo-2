@@ -24,9 +24,18 @@
     &>textarea {
         height: 60px;
     }
+
 }
 
 .interacciones {
     @include content-information;
 
     }
+
+
+    .crearNuevaInteraccion {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
