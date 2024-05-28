@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const DatosPersonales = () => {
+const DatosPersonales = ({ clienteBuscado }) => {
   return <>
     <section className="datospersonales">
       <h3>Datos personales</h3>
@@ -13,7 +13,7 @@ const DatosPersonales = () => {
         </div>
         <div>
           <label htmlFor="nombre">Nombre:</label>
-          <input type="text" name="nombre" id="nombre"/><br></br>
+          <input type="text" name="nombre" id="nombre" /><br></br>
           <label htmlFor="Apellidos">Apellidos:</label>
           <input type="text" name="apellidos" id="apellidos"/><br></br>
           <label htmlFor="fechadenacimiento">Fecha de nacimiento:</label>
