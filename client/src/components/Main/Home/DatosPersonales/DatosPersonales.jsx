@@ -18,7 +18,7 @@ const DatosPersonales = ({ clienteBuscado }) => {
         <input type="text" name="apellidos" id="apellidos" defaultValue={clienteBuscado[0].apellido_alumno} /><br></br>
 
         <label htmlFor="fechadenacimiento">Fecha de nacimiento:</label>
-        <input type="text" name="fechadenacimiento" id="fechadenacimiento" defaultValue={clienteBuscado[0].fecha_nacimiento} /><br></br>
+        <input type="text" name="fechadenacimiento" id="fechadenacimiento" defaultValue={new Date(clienteBuscado[0].fecha_nacimiento).toLocaleDateString()} /><br></br>
 
         <label htmlFor="dni">Número de Identificación:</label>
         <input type="text" name="dni" id="dni" defaultValue={clienteBuscado[0].dni} /><br></br>
@@ -57,7 +57,7 @@ const DatosPersonales = ({ clienteBuscado }) => {
         <input type="text" name="persona_recomendado" id="persona_recomendado" defaultValue={clienteBuscado[0].persona_recomendado} /><br></br>
 
         <label htmlFor="fecha_registro">Fecha de registro:</label>
-        <input type="text" name="fecha_registro" id="fecha_registro" defaultValue={clienteBuscado[0].fecha_registro} /><br></br>
+        <input type="text" name="fecha_registro" id="fecha_registro" defaultValue={new Date(clienteBuscado[0].fecha_registro).toLocaleDateString()} /><br></br>
       </div>
 
 
