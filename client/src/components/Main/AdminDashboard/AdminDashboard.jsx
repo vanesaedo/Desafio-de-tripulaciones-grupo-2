@@ -114,6 +114,9 @@ const AdminDashboard = () => {
 
   return <div>
     <h2>Admin Dashboard</h2>
+    <frameset>
+       <frame src='https://desafiotripulacionesds.streamlit.app/?embedded=true' />
+    </frameset>
 
     <frameset>
       <frame src='https://desafiotripulacionesds.streamlit.app/?embedded=true' />
