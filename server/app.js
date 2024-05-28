@@ -36,19 +36,19 @@ app.use(cors({
 /******RUTAS ******/
 
 // Ruta de inicio
-app.get("/", (req, res) => {
+/* app.get("/", (req, res) => {
   res.status(200).send("Estas en el Home");
-});
-
-// Todas las peticiones que no sean a la API, redirigirán a la página principal
-app.get("*", (req, res) => { 
-  res.sendFile(path.join(__dirname, '../client/dist/index.html')) 
-});
+}); */
 
 // API
 app.use('/api/test', (req, res) => { res.status(200).json({ status: "connected" }) });
-app.use('/api/users', usersRouter); // Rutas de usuarios
+app.use('/api/users', usersRouter); // Rutas de usuarios (empleados)
 app.use('/api/resources', resourcesRouter); // Rutas de recursos protegidos
+
+// Todas las peticiones que no sean a la API, redirigirán a la página principal
+/* app.get("*", (req, res) => { 
+  res.sendFile(path.join(__dirname, '../client/dist/index.html')) 
+}); */
 
 // Manejo de errores 404
 app.use((req, res, next) => {
