@@ -1,7 +1,6 @@
 
 
 
-
 @mixin centered-row-layout {
     //reutilizacion de codigo de estilos
     display: flex;
@@ -77,8 +76,6 @@
 @mixin content-information {
     display:flex;
     justify-content: center;
-    
     padding:20px; 
     width:80%; 
-
 }

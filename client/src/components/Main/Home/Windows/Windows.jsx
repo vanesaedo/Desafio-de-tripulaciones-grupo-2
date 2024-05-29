@@ -5,6 +5,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { useState } from "react";
 import theme from '../../../../theme';
+import Box from '@mui/material/Box'
 
 
 
@@ -56,10 +57,10 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
   };
 
 
-
   return <>
     <section className="cabecera_estudiante">
     <ThemeProvider theme={theme}>
+      <Box>
 
       <Tabs
         value={value}
@@ -96,6 +97,9 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
           onClick={() => clickWindows("contratos")}
         />
       </Tabs>
+
+      </Box>
+
       </ThemeProvider>
     </section>
 

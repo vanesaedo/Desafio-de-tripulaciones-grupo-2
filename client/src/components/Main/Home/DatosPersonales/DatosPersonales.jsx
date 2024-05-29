@@ -1,8 +1,10 @@
 import React from "react";
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
-import logo from '../../../../assets/Be_logo.png';
+import logo from '../../../../assets/BE_logo.png'
 import qr from '../../../../assets/QR_Code_Desafio.png';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 const DatosPersonales = ({ clienteBuscado }) => {
 
@@ -151,6 +153,10 @@ doc.autoTable({
   return <>
     {clienteBuscado ? <section className="datospersonales">
       <div>
+    <Stack spacing={2} direction="row">
+      <Button variant="outlined">Editar</Button>
+      <Button variant="outlined">Generar PDF</Button>
+    </Stack>
         <button>Editar</button>
         <button onClick={generarPDF}>Generar pdf</button>
       </div>
