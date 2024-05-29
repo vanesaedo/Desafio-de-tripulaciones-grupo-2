@@ -7,14 +7,15 @@ import Interacciones from "./Interacciones";
 import Contratos from "./Contratos";
 
 const Home = () => {
-  const [ windowsEnUso, setWindowsEnUso ] = useState(); //Estado para dibujar la info de una u otra windows
-  const [ DNIbuscado, setDNIbuscado ] = useState();
-  const [ clienteBuscado, setClienteBuscado ] = useState({
+  const [windowsEnUso, setWindowsEnUso] = useState(""); //Estado para dibujar la info de una u otra windows
+  const [DNIbuscado, setDNIbuscado] = useState("");
+  const [clienteBuscado, setClienteBuscado] = useState({
     datosPersonales: "",
     servicios: "",
     interacciones: "",
     contratos: ""
   });
+
 
   return <section className="home">
     <div className="Buscador">  
@@ -30,6 +31,7 @@ const Home = () => {
     {windowsEnUso == "contratos"? <Contratos clienteBuscado={clienteBuscado.contratos} /> : <></>}
     </article>
   </section>;
+
 };
 
 export default Home;
