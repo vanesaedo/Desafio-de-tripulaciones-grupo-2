@@ -1,7 +1,7 @@
 import React from "react";
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
-import logo from '../../../../assets/Be_logo.png';
+import logo from '../../../../assets/BE_logo.png';
 import qr from '../../../../assets/QR_Code_Desafio.png';
 
 const DatosPersonales = ({ clienteBuscado }) => {
@@ -149,13 +149,13 @@ doc.autoTable({
   }
 
   return <>
-    {clienteBuscado ? <section className="datospersonales">
-      <div>
-        <button>Editar</button>
-        <button onClick={generarPDF}>Generar pdf</button>
-      </div>
-
-      <div className="datosCliente">
+    {clienteBuscado ? <section>
+      <section>
+        <button className="secondary-button">Editar</button>
+        <button className="secondary-button" onClick={generarPDF}>Generar pdf</button>
+      </section>
+<article className="form-datos-personales">
+      <form>
         <h3>Datos personales</h3>
         <label htmlFor="nombre">Nombre:</label>
         <input type="text" name="nombre" id="nombre" defaultValue={clienteBuscado[0].nombre_alumno} /><br></br>
@@ -204,10 +204,11 @@ doc.autoTable({
 
         <label htmlFor="fecha_registro">Fecha de registro:</label>
         <input type="text" name="fecha_registro" id="fecha_registro" defaultValue={new Date(clienteBuscado[0].fecha_registro).toLocaleDateString()} /><br></br>
-      </div>
+      </form>
+      </article>
 
-
-      <div className="datosRepresentante">
+<article>
+      <form className="datosRepresentante">
         <h3>Datos del representante 1</h3>
 
         <label htmlFor="nombre_representante_legal">Nombre:</label>
@@ -227,10 +228,12 @@ doc.autoTable({
 
         <label htmlFor="telefono_representante_legal">Teléfono:</label>
         <input type="text" name="telefono_representante_legal" id="telefono_representante_legal" defaultValue={clienteBuscado[0].telefono_representante_legal} /><br></br>
-      </div>
+      </form>
+      </article>
 
+      <article>
       {clienteBuscado[1] ?
-        <div className="datosRepresentante">
+        <form className="datosRepresentante">
           <h3>Datos del representante 2</h3>
 
           <label htmlFor="nombre_representante_legal">Nombre:</label>
@@ -250,10 +253,11 @@ doc.autoTable({
 
           <label htmlFor="telefono_representante_legal">Teléfono:</label>
           <input type="text" name="telefono_representante_legal" id="telefono_representante_legal" defaultValue={clienteBuscado[1].telefono_representante_legal} /><br></br>
-        </div> : <></>}
-
+        </form> : <></>}
+        </article>
+        <article>
       <h3>Datos de facturación</h3>
-      <div className="datosFacturacion">
+      <form className="datosFacturacion">
         <label htmlFor="nombre_datos_facturacion">Nombre:</label>
         <input type="text" name="nombre_datos_facturacion" id="nombre_datos_facturacion" defaultValue={clienteBuscado[0].nombre_datos_facturacion} /><br></br>
 
@@ -280,7 +284,8 @@ doc.autoTable({
 
         <label htmlFor="codigo_postal_datos_facturacion">Código Postal:</label>
         <input type="text" name="codigo_postal_datos_facturacion" id="codigo_postal_datos_facturacion" defaultValue={clienteBuscado[0].codigo_postal_datos_facturacion} /><br></br>
-      </div>
+      </form>
+      </article>
     </section > : <></>}
   </>
 };

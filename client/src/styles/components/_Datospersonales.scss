@@ -1,8 +1,14 @@
 @import '../utils/mixins.scss';
 @import '../utils/variables.scss';
 
-.datospersonales{
-    
-  @include content-information;
-    
-} 
+.secondary-button {
+  height: 32px;
+  color: $purple;
+  background-color: white;
+  border: 0.8 solid $purple; 
+  border-radius: 60px;
+}
+
+.form-general {
+  padding-left:10%;
+}

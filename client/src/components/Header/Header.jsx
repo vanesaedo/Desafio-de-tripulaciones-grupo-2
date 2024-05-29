@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "./Nav";
-import Logo from "../../assets/BE_logo.png";
+import Logo from "../../assets/logo.png";
 
 const Header = () => {
   return <header className="header">
@@ -8,7 +8,6 @@ const Header = () => {
     <img src={Logo} alt="Logo beyond" />
     <h2>MANAGER</h2>
     </div>
-  
     <Nav />
   </header>;
 };

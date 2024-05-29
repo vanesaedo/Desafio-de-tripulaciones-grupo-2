@@ -3,8 +3,8 @@
 
 .main{
     box-sizing: border-box;
-    @include centered-column-layout;
+
     background-color: white;
     width:100vw;
-    color:white;
+   
 }

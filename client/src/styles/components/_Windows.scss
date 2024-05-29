@@ -27,8 +27,8 @@
 }
 
 .nombre_estudiante {
-    @include centered-row-layout;
-    justify-content: flex-start;
+    padding:10%;
+    justify-content: flex-end;
     text-align: left;
 }
 

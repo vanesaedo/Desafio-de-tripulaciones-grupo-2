@@ -8,6 +8,7 @@
     flex-direction: row;
     padding:0px;
     margin:0px;
+    color:$strong-blue;
   
 }
 
@@ -17,9 +18,10 @@
     flex-direction: column;
     padding:0px;
     margin:0px;
+    color:$strong-blue;
 }
 
-@mixin form ($purple) {
+@mixin form ($strong-blue) {
     //-webkit-box-shadow: 10px 10px 5px 0px $purple;
     //-moz-box-shadow: 10px 10px 5px 0px $purple;
     //box-shadow: 10px 10px 5px 0px $purple;
@@ -30,7 +32,7 @@
     }
     &>button {
         height: 32;
-        background-color:$purple;
+        background-color:$strong-blue;
         color:white;
         padding:8px 20px;
         border:0px;
@@ -44,7 +46,7 @@
 @mixin button-normal-white {
   
     height: 32;
-    color:$purple;
+    color:white;
     gap:20px;
     border:0px;
     background-color: white;
@@ -79,6 +81,10 @@
     justify-content: start;
     padding:20px; 
     width:90%; 
-    color:$strong-blue;
+    color:black;
+    &>label {
+        color:black;
+       
+    }
 
 }
