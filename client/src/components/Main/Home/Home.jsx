@@ -6,6 +6,7 @@ import DatosPersonales from "./DatosPersonales";
 import Interacciones from "./Interacciones";
 import Contratos from "./Contratos";
 import EventsCalendar from './Calendar/EventsCalendar';
+import Avisos from "./Avisos";
 
 const Home = () => {
   const [windowsEnUso, setWindowsEnUso] = useState(""); //Estado para dibujar la info de una u otra windows
@@ -51,6 +52,7 @@ const Home = () => {
           )}
         </>
       )}
+      <Avisos />
     </section>
   );
 };
