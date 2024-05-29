@@ -5,6 +5,7 @@ import Servicios from "./Servicios"
 import DatosPersonales from "./DatosPersonales";
 import Interacciones from "./Interacciones";
 import Contratos from "./Contratos";
+import EventsCalendar from './Calendar/EventsCalendar';
 
 const Home = () => {
   const [windowsEnUso, setWindowsEnUso] = useState(""); //Estado para dibujar la info de una u otra windows
@@ -21,13 +22,19 @@ const Home = () => {
       <div className="Buscador">
         <Buscador setDNIbuscado={setDNIbuscado} />
       </div>
+
+      <div className="App">
+        <h1>Calendario</h1>
+        <EventsCalendar />
+      </div>
+
       {DNIbuscado && (
         <>
           <nav className="cabecera_estudiante">
-            <Windows 
-              setWindowsEnUso={setWindowsEnUso} 
-              DNIbuscado={DNIbuscado} 
-              setClienteBuscado={setClienteBuscado} 
+            <Windows
+              setWindowsEnUso={setWindowsEnUso}
+              DNIbuscado={DNIbuscado}
+              setClienteBuscado={setClienteBuscado}
             />
           </nav>
           {windowsEnUso === "datosPersonales" && (
