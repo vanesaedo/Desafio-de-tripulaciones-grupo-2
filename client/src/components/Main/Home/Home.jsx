@@ -5,6 +5,7 @@ import Servicios from "./Servicios"
 import DatosPersonales from "./DatosPersonales";
 import Interacciones from "./Interacciones";
 import Contratos from "./Contratos";
+import Avisos from "./Avisos";
 
 const Home = () => {
   const [ windowsEnUso, setWindowsEnUso ] = useState(); //Estado para dibujar la info de una u otra windows
@@ -23,6 +24,7 @@ const Home = () => {
     {windowsEnUso == "servicios"? <Servicios clienteBuscado={clienteBuscado.servicios} /> : <></>}
     {windowsEnUso == "interacciones"? <Interacciones clienteBuscado={clienteBuscado.interacciones} /> : <></>}
     {windowsEnUso == "contratos"? <Contratos clienteBuscado={clienteBuscado.contratos} /> : <></>}
+    <Avisos />
   </section>;
 };
 
