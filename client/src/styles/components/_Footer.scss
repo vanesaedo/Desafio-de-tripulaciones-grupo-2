@@ -2,13 +2,12 @@
 @import '../utils/variables.scss';
 
 .footer{
+    visibility:hidden;
     @include centered-column-layout;
-    text-align: center;
+   
     color:white;
-    border:1px solid black;
     height: 14vh;
     vertical-align: bottom;
-    width:100px; 
-    background-color:$purple;
-
+    width:100vw; 
+    background-color:$strong-blue;
 }
