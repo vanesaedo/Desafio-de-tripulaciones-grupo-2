@@ -32,7 +32,7 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
       const res = axios.get(url);
 
       console.log(res)
-      if(windows == "datosPersonales") {
+      if (windows == "datosPersonales") {
 
         res.then(response => setClienteBuscado(prev => {
           return { ...prev, datosPersonales: response.data }
@@ -59,44 +59,45 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
 
   return <>
     <section className="cabecera_estudiante">
-    <ThemeProvider theme={theme}>
+      
+        <ThemeProvider theme={theme}>
 
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        textColor='secondary'
-        indicatorColor='secondary'
-        aria-label="secondary tabs example"
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            textColor='secondary'
+            indicatorColor='secondary'
+            aria-label="secondary tabs example"
+          >
+            <Tab
+              value="Datos personales"
+              label="Datos personales"
+              wrapped
+              onClick={() => clickWindows("datosPersonales")}
+            />
 
-      >
-        <Tab
-          value="Datos personales"
-          label="Datos personales"
-          wrapped
-          onClick={() => clickWindows("datosPersonales")}
-        />
+            <Tab
+              value="Servicios preferentes"
+              label="Servicios preferentes"
+              wrapped
+              onClick={() => clickWindows("servicios")}
+            />
 
-        <Tab
-          value="Servicios preferentes"
-          label="Servicios preferentes"
-          wrapped
-          onClick={() => clickWindows("servicios")}
-        />
-
-        <Tab
-          value="Interacciones"
-          label="Interacciones"
-          wrapped
-          onClick={() => clickWindows("interacciones")}
-        />
-        <Tab
-          value="Contratos"
-          label="Contratos"
-          wrapped
-          onClick={() => clickWindows("contratos")}
-        />
-      </Tabs>
-      </ThemeProvider>
+            <Tab
+              value="Interacciones"
+              label="Interacciones"
+              wrapped
+              onClick={() => clickWindows("interacciones")}
+            />
+            <Tab
+              value="Contratos"
+              label="Contratos"
+              wrapped
+              onClick={() => clickWindows("contratos")}
+            />
+          </Tabs>
+        </ThemeProvider>
+        
     </section>
 
   </>

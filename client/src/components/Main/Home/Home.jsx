@@ -7,27 +7,45 @@ import Interacciones from "./Interacciones";
 import Contratos from "./Contratos";
 
 const Home = () => {
-  const [ windowsEnUso, setWindowsEnUso ] = useState(); //Estado para dibujar la info de una u otra windows
-  const [ DNIbuscado, setDNIbuscado ] = useState();
-  const [ clienteBuscado, setClienteBuscado ] = useState({
+  const [windowsEnUso, setWindowsEnUso] = useState(""); //Estado para dibujar la info de una u otra windows
+  const [DNIbuscado, setDNIbuscado] = useState("");
+  const [clienteBuscado, setClienteBuscado] = useState({
     datosPersonales: "",
     servicios: "",
     interacciones: "",
     contratos: ""
   });
 
-  return <section className="home">
-    <div className="Buscador">
-    <Buscador setDNIbuscado={setDNIbuscado} />
-    </div>
-      <nav className="cabecera_estudiante">
-    <Windows setWindowsEnUso={setWindowsEnUso} DNIbuscado={DNIbuscado} setClienteBuscado={setClienteBuscado} />
-    </nav>
-    {windowsEnUso == "datosPersonales"? <DatosPersonales clienteBuscado={clienteBuscado.datosPersonales} /> : <></>}
-    {windowsEnUso == "servicios"? <Servicios clienteBuscado={clienteBuscado.servicios} /> : <></>}
-    {windowsEnUso == "interacciones"? <Interacciones clienteBuscado={clienteBuscado.interacciones} /> : <></>}
-    {windowsEnUso == "contratos"? <Contratos clienteBuscado={clienteBuscado.contratos} /> : <></>}
-  </section>;
+  return (
+    <section className="home">
+      <div className="Buscador">
+        <Buscador setDNIbuscado={setDNIbuscado} />
+      </div>
+      {DNIbuscado && (
+        <>
+          <nav className="cabecera_estudiante">
+            <Windows 
+              setWindowsEnUso={setWindowsEnUso} 
+              DNIbuscado={DNIbuscado} 
+              setClienteBuscado={setClienteBuscado} 
+            />
+          </nav>
+          {windowsEnUso === "datosPersonales" && (
+            <DatosPersonales clienteBuscado={clienteBuscado.datosPersonales} />
+          )}
+          {windowsEnUso === "servicios" && (
+            <Servicios clienteBuscado={clienteBuscado.servicios} />
+          )}
+          {windowsEnUso === "interacciones" && (
+            <Interacciones clienteBuscado={clienteBuscado.interacciones} />
+          )}
+          {windowsEnUso === "contratos" && (
+            <Contratos clienteBuscado={clienteBuscado.contratos} />
+          )}
+        </>
+      )}
+    </section>
+  );
 };
 
 export default Home;
