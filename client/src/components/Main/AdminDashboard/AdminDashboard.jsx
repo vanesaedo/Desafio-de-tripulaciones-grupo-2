@@ -100,7 +100,7 @@ const AdminDashboard = () => {
         <li>Email: {user.email}</li>
         <li>Rol: {user.role}</li>
         <li>Status: {user.status}</li>
-        <button onClick={()=>revokeAccess(user.email)}>Revoke Access</button><br /><br /><br />
+        <button onClick={() => revokeAccess(user.email)}>Revoke Access</button><br /><br /><br />
       </ul>
     })
   }
@@ -108,7 +108,7 @@ const AdminDashboard = () => {
   return <div>
     <h2>Admin Dashboard</h2>
     <frameset>
-       <frame src='https://desafiotripulacionesds.streamlit.app/?embedded=true' />
+      <frame src='https://desafiotripulacionesds.streamlit.app/?embedded=true' />
     </frameset>
 
     <div className="sign-form">
@@ -125,10 +125,11 @@ const AdminDashboard = () => {
         <option value="admin">Admin</option>
       </select>
       <button onClick={handleSignUp}>Sign Up</button><br /><br />
+      <button onClick={handleGetUsers}>Get All Users</button>
+      <button onClick={handleClean}>Clean</button>
     </div>
 
-    <button onClick={handleGetUsers}>Get All Users</button>
-    <button onClick={handleClean}>Clean</button>
+
 
     {printUsers(users)}
 
