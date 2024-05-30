@@ -55,6 +55,7 @@ const Home = () => {
       )}
       {/* <Avisos /> */}
     </section>
+
 };
 
 export default Home;

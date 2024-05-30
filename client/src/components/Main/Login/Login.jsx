@@ -81,7 +81,7 @@ const Login = ({ logged, role }) => {
       <div className="agent">
         <img src={UserImage}></img>
         <h3>{email}</h3>
-        
+
       </div>
       <button onClick={handleLogout}>Logout</button>
     </section>

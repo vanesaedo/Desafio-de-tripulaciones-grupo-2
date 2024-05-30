@@ -6,7 +6,7 @@ const Client = () => {
 
   const [message, setMessage] = useState("");
 
-  useEffect(() => {
+  {message? useEffect(() => {
     const getUserResources = async () => {
       try {
         const request = await axios({
@@ -21,7 +21,7 @@ const Client = () => {
     }
     getUserResources();
 
-  }, [])
+  }, []) : null}
 
   return <div>
     <Home/>
