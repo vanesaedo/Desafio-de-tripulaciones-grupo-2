@@ -142,23 +142,11 @@ const getAvisos = async () => {
 };
 
 const updateServices = async (modifiedServices) => {
-  const { a, b, c, d, e, f, g, h, i, j, k } = modifiedServices;
+  const { id_interes, interesado } = modifiedServices;
   let client, result;
   try {
     client = await pool.connect(); // Espera a abrir conexion
-    const data = await client.query(queries.updateServices, [
-      a, 
-      b, 
-      c, 
-      d, 
-      e, 
-      f, 
-      g, 
-      h, 
-      i, 
-      j, 
-      k
-    ]);
+    const data = await client.query(queries.updateServices, [id_interes, interesado]);
     result = data.rowCount;
   } catch (err) {
     console.log(err);
@@ -181,3 +169,5 @@ const user = {
 };
 
 module.exports = user;
+
+//updateServices({id_interes: 79, interesado: false})

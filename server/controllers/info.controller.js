@@ -61,7 +61,7 @@ const getAvisos = async (req, res) => {
 
 const updateServices = async (req, res) => {
     const modifiedServices = req.body; 
-    const response = await user.updateServices(modifiedServices);
+    const response = await user.updateServices(modifiedServices); // {id_interes: 79, interesado: false}
     res.status(200).json("items_updated");
 }
 
