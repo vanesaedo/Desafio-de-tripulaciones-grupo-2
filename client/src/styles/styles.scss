@@ -1,5 +1,7 @@
 @import './pages/App';
 
+@import './components/Admin-dashboard';
+@import './components/Buscador';
 @import './components/Datospersonales';
 @import './components/Footer';
 @import './components/Header';
@@ -8,7 +10,5 @@
 @import './components/Login';
 @import './components/Main';
 @import './components/Nav';
-@import './components/Windows';
 @import './components/Servicios';
-@import './components/Buscador';
-
+@import './components/Windows';
