@@ -153,16 +153,15 @@ const DatosPersonales = ({ clienteBuscado }) => {
   }
 
   return <>
-    {clienteBuscado ?
 
+    {clienteBuscado ?
       <section className="contenidosWindows">
-        <div>
-       
+        <nav>
           <button>Editar</button>
           <button onClick={generarPDF}>Generar pdf</button>
-        </div>
+        </nav>
 
-        <article className="datos-personales">
+        <form className="datos-personales">
           <h3>Datos personales</h3>
           <label htmlFor="nombre">Nombre:</label>
           <input type="text" name="nombre" id="nombre" defaultValue={clienteBuscado[0].nombre_alumno} /><br></br>
@@ -211,10 +210,10 @@ const DatosPersonales = ({ clienteBuscado }) => {
 
           <label htmlFor="fecha_registro">Fecha de registro:</label>
           <input type="text" name="fecha_registro" id="fecha_registro" defaultValue={new Date(clienteBuscado[0].fecha_registro).toLocaleDateString()} /><br></br>
-        </article>
+        </form>
 
 
-        <div className="datosRepresentante">
+        <form className="datosRepresentante">
           <h3>Datos del representante 1</h3>
 
           <label htmlFor="nombre_representante_legal">Nombre:</label>
@@ -234,10 +233,10 @@ const DatosPersonales = ({ clienteBuscado }) => {
 
           <label htmlFor="telefono_representante_legal">Teléfono:</label>
           <input type="text" name="telefono_representante_legal" id="telefono_representante_legal" defaultValue={clienteBuscado[0].telefono_representante_legal} /><br></br>
-        </div>
+        </form>
 
         {clienteBuscado[1] ?
-          <div className="datosRepresentante">
+          <form className="datosRepresentante">
             <h3>Datos del representante 2</h3>
 
             <label htmlFor="nombre_representante_legal">Nombre:</label>
@@ -257,10 +256,10 @@ const DatosPersonales = ({ clienteBuscado }) => {
 
             <label htmlFor="telefono_representante_legal">Teléfono:</label>
             <input type="text" name="telefono_representante_legal" id="telefono_representante_legal" defaultValue={clienteBuscado[1].telefono_representante_legal} /><br></br>
-          </div> : <></>}
+          </form> : <></>}
 
         <h3>Datos de facturación</h3>
-        <div className="datosFacturacion">
+        <form className="datosFacturacion">
           <label htmlFor="nombre_datos_facturacion">Nombre:</label>
           <input type="text" name="nombre_datos_facturacion" id="nombre_datos_facturacion" defaultValue={clienteBuscado[0].nombre_datos_facturacion} /><br></br>
 
@@ -287,7 +286,7 @@ const DatosPersonales = ({ clienteBuscado }) => {
 
           <label htmlFor="codigo_postal_datos_facturacion">Código Postal:</label>
           <input type="text" name="codigo_postal_datos_facturacion" id="codigo_postal_datos_facturacion" defaultValue={clienteBuscado[0].codigo_postal_datos_facturacion} /><br></br>
-        </div>
+        </form>
       </section > : <></>}
   </>
 };

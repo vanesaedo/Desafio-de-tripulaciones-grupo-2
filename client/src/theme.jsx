@@ -12,7 +12,7 @@ const theme = createTheme({
           alignContent:'flex-end'
         },
         indicator: {
-          backgroundColor: '#fff', // Color de la línea del scroller
+          backgroundColor: '#002766', // Color de la línea del scroller
         },
       },
     },

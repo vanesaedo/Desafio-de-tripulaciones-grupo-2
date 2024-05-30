@@ -1,13 +1,21 @@
-@import '../utils/mixins.scss';
 @import '../utils/variables.scss';
 
-
-
 .contenidosWindows {
-   
-    padding:20%;
-    width:100%; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     color: $strong-blue;
-    background-color: white;
-   
-} 
+    padding: 10%;
+  }
+
+.datos-personales {
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px; 
+}
+
+button {
+    @include button-normal-blue; 
+
+}
