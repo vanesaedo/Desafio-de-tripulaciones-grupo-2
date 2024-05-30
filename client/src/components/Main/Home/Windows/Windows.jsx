@@ -23,7 +23,8 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
       datosPersonales: "",
       servicios: "",
       interacciones: "",
-      contratos: ""
+      contratos: "",
+      calendario: "",
     })
     const url = `http://localhost:5000/api/info/${windows}?dni=${DNIbuscado}`
     console.log(windows)
@@ -50,6 +51,7 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
           return { ...prev, contratos: response.data }
         }));
       }
+
     } catch {
       console.log("ERROR: NOT FOUND");
     }
@@ -59,45 +61,51 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
 
   return <>
     <section className="cabecera_estudiante">
-      
-        <ThemeProvider theme={theme}>
 
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            textColor='secondary'
-            indicatorColor='secondary'
-            aria-label="secondary tabs example"
-          >
-            <Tab
-              value="Datos personales"
-              label="Datos personales"
-              wrapped
-              onClick={() => clickWindows("datosPersonales")}
-            />
+      <ThemeProvider theme={theme}>
 
-            <Tab
-              value="Servicios preferentes"
-              label="Servicios preferentes"
-              wrapped
-              onClick={() => clickWindows("servicios")}
-            />
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          textColor='secondary'
+          indicatorColor='secondary'
+          aria-label="secondary tabs example"
+        >
+          <Tab
+            value="Datos personales"
+            label="Datos personales"
+            wrapped
+            onClick={() => clickWindows("datosPersonales")}
+          />
 
-            <Tab
-              value="Interacciones"
-              label="Interacciones"
-              wrapped
-              onClick={() => clickWindows("interacciones")}
-            />
-            <Tab
-              value="Contratos"
-              label="Contratos"
-              wrapped
-              onClick={() => clickWindows("contratos")}
-            />
-          </Tabs>
-        </ThemeProvider>
-        
+          <Tab
+            value="Servicios preferentes"
+            label="Servicios preferentes"
+            wrapped
+            onClick={() => clickWindows("servicios")}
+          />
+
+          <Tab
+            value="Interacciones"
+            label="Interacciones"
+            wrapped
+            onClick={() => clickWindows("interacciones")}
+          />
+          <Tab
+            value="Contratos"
+            label="Contratos"
+            wrapped
+            onClick={() => clickWindows("contratos")}
+          />
+        <Tab
+          value="Calendario"
+          label="Calendario"
+          wrapped
+          onClick={() => clickWindows("calendario")}
+        />
+        </Tabs>
+      </ThemeProvider>
+
     </section>
 
   </>

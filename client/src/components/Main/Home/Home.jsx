@@ -24,11 +24,6 @@ const Home = () => {
         <Buscador setDNIbuscado={setDNIbuscado} />
       </div>
 
-      <div className="App">
-        <h1>Calendario</h1>
-        <EventsCalendar />
-      </div>
-
       {DNIbuscado && (
         <>
           <nav className="cabecera_estudiante">
@@ -38,6 +33,7 @@ const Home = () => {
               setClienteBuscado={setClienteBuscado}
             />
           </nav>
+          <br />
           {windowsEnUso === "datosPersonales" && (
             <DatosPersonales clienteBuscado={clienteBuscado.datosPersonales} />
           )}
@@ -49,6 +45,9 @@ const Home = () => {
           )}
           {windowsEnUso === "contratos" && (
             <Contratos clienteBuscado={clienteBuscado.contratos} />
+          )}
+          {windowsEnUso === "calendario" && (
+            <EventsCalendar clienteBuscado={clienteBuscado.EventsCalendar} />
           )}
         </>
       )}
