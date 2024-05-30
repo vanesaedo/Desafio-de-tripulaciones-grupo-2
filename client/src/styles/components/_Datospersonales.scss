@@ -3,10 +3,11 @@
 
 
 
-.datosCliente{
-    @include form ();
+.contenidosWindows {
+   
     padding:20%;
     width:100%; 
-    background-color: $strong-blue;
-    
+    color: $strong-blue;
+    background-color: white;
+   
 } 
