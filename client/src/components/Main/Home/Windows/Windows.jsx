@@ -6,16 +6,11 @@ import Tab from '@mui/material/Tab';
 import { useState } from "react";
 import theme from '../../../../theme';
 
-
-
 const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
-
   const [value, setValue] = useState('Datos personales');
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
 
   function clickWindows(windows) {
     setWindowsEnUso(windows);
@@ -26,15 +21,12 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
       contratos: "",
     })
     const url = `http://localhost:5000/api/info/${windows}?dni=${DNIbuscado}`
-    console.log(windows)
     try {
-      console.log(windows)
       let res = ""
-      if(windows == "calendario") {
+      if (windows == "calendario") {
         res = ""
-      } else {res = axios.get(url)}
-      
-      console.log(res)
+      } else { res = axios.get(url) }
+
       if (windows == "datosPersonales") {
         res.then(response => setClienteBuscado(prev => {
           return { ...prev, datosPersonales: response.data }
@@ -58,13 +50,9 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
     }
   };
 
-
   return <>
     <section className="cabecera_estudiante">
-
-
       <ThemeProvider theme={theme}>
-
         <Tabs
           value={value}
           onChange={handleChange}
@@ -98,16 +86,15 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
             wrapped
             onClick={() => clickWindows("contratos")}
           />
-        <Tab
-          value="Calendario"
-          label="Calendario"
-          wrapped
-          onClick={() => clickWindows("calendario")}
-        />
+          <Tab
+            value="Calendario"
+            label="Calendario"
+            wrapped
+            onClick={() => clickWindows("calendario")}
+          />
         </Tabs>
 
       </ThemeProvider>
-
     </section>
 
   </>

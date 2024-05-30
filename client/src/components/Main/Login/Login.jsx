@@ -2,9 +2,8 @@ import * as React from 'react';
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import {validateEmail, validatePassword} from "../../../utils/regex";
+import { validateEmail, validatePassword } from "../../../utils/regex";
 import UserImage from '../../../assets/user_azul.png';
-
 
 const Login = ({ logged, role }) => {
   const [email, setEmail] = useState("");
@@ -89,19 +88,14 @@ const Login = ({ logged, role }) => {
   }
 
   return (
- 
+
     <div className="login-form">
       <h4>Login</h4>
       <input className="input-general" type="email" placeholder="email" onChange={handleEmail} />
       <input className="input-general" type="password" placeholder="password" onChange={handlePassword} />
       <a href="#">¿Has olvidado tu contraseña?</a>
       <p>(*) Para darse de alta, póngase en contacto con el Administrador del Sistema</p>
-     {/*  <Stack spacing={1} direction="row">
-      
-      <Button className="login_button" onClick={handleLogin} variant="contained">Login</Button>
-    
-    </Stack> */}
- <button className="login_button" onClick={handleLogin}>Login</button>
+      <button className="login_button" onClick={handleLogin}>Login</button>
     </div>
   );
 };

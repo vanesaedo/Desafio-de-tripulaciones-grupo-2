@@ -18,13 +18,10 @@ const Home = () => {
     contratos: ""
   });
 
-
   return <section className="home">
-
     <nav className="Buscador">
       <Buscador setDNIbuscado={setDNIbuscado} />
     </nav>
-
 
       {DNIbuscado && (
         <>
@@ -53,7 +50,7 @@ const Home = () => {
           )}
         </>
       )}
-      {/* <Avisos /> */}
+      <Avisos />
     </section>
 
 };

@@ -8,15 +8,12 @@ const Avisos = () => {
       try {
         const respuesta = await fetch('http://localhost:5000/api/info/avisos');
         if (!respuesta.ok) {
-          throw new Error(`Error en la respuesta: ${respuesta.statusText}`);
-        }
+          throw new Error(`Error en la respuesta: ${respuesta.statusText}`)};
         const datos = await respuesta.json();
         setAlumnos(datos);
       } catch (error) {
         console.error('Error obteniendo datos:', error);
-      }
-    };
-
+      }};
     obtenerAlumnos();
   }, []);
 
@@ -28,8 +25,7 @@ const Avisos = () => {
 
     // Si el cumpleaños ya pasó este año, ajusta al próximo año
     if (proximoCumpleaños < fechaActual) {
-      proximoCumpleaños.setFullYear(añoActual + 1);
-    }
+      proximoCumpleaños.setFullYear(añoActual + 1)};
 
     const diferenciaTiempo = proximoCumpleaños - fechaActual;
     const diferenciaDias = Math.ceil(diferenciaTiempo / (1000 * 60 * 60 * 24));

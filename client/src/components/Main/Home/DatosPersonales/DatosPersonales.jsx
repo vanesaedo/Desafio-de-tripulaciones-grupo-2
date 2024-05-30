@@ -1,15 +1,12 @@
 import React from "react";
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
-
 import logo from '../../../../assets/BE_logo.png';
-
 import qr from '../../../../assets/QR_Code_Desafio.png';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
 const DatosPersonales = ({ clienteBuscado }) => {
-
   const generarPDF = () => {
     var doc = new jsPDF();
 
@@ -146,7 +143,6 @@ const DatosPersonales = ({ clienteBuscado }) => {
       head: [columns07],
       body: data07,
     });
-
 
     //guardar el pdf con un nombre específico
     doc.save(`DatosPersonales_${clienteBuscado[0].dni}.pdf`);

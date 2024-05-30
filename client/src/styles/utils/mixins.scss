@@ -1,23 +1,16 @@
-
-
-
 @mixin centered-row-layout {
     //reutilizacion de codigo de estilos
     display: flex;
     flex-direction: row;
-  
 }
 
 @mixin centered-column-layout {
     //reutilizacion de codigo de estilos
     display: flex;
     flex-direction: column;
-
 }
 
-
 @mixin button-normal-white {
-  
     height: 32;
     color:$purple;
     gap:20px;
@@ -25,11 +18,9 @@
     background-color: white;
     border-radius:6px; 
     font-size: medium;
-   
-
 }
+
 @mixin button-normal-purple {
-  
     height: 32;
     color:white;
     padding:8px 20px;
@@ -37,11 +28,9 @@
     background-color: $purple;
     border-radius:6px; 
     font-size: medium;
-
 }
 
 @mixin button-normal-blue {
-  
     height: 32;
     color:white;
     padding:8px 20px;
@@ -49,7 +38,6 @@
     background-color: $strong-blue;
     border-radius:6px; 
     font-size: medium;
-
 }
 
 @mixin content-information {
@@ -58,4 +46,3 @@
     padding:20px; 
     width:80%; 
 }
-
