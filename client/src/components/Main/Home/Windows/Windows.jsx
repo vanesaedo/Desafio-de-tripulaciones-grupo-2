@@ -5,7 +5,6 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { useState } from "react";
 import theme from '../../../../theme';
-import Box from '@mui/material/Box'
 
 
 
@@ -33,7 +32,7 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
       const res = axios.get(url);
 
       console.log(res)
-      if(windows == "datosPersonales") {
+      if (windows == "datosPersonales") {
 
         res.then(response => setClienteBuscado(prev => {
           return { ...prev, datosPersonales: response.data }
@@ -59,23 +58,31 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
 
   return <>
     <section className="cabecera_estudiante">
-    <ThemeProvider theme={theme}>
-      <Box>
 
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        textColor='secondary'
-        indicatorColor='secondary'
-        aria-label="secondary tabs example"
+      
+ <ThemeProvider theme={theme}>
 
-      >
-        <Tab
-          value="Datos personales"
-          label="Datos personales"
-          wrapped
-          onClick={() => clickWindows("datosPersonales")}
-        />
+
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            textColor='secondary'
+            indicatorColor='secondary'
+            aria-label="secondary tabs example"
+          >
+            <Tab
+              value="Datos personales"
+              label="Datos personales"
+              wrapped
+              onClick={() => clickWindows("datosPersonales")}
+            />
+
+            <Tab
+              value="Servicios preferentes"
+              label="Servicios preferentes"
+              wrapped
+              onClick={() => clickWindows("servicios")}
+            />
 
         <Tab
           value="Servicios preferentes"
@@ -98,9 +105,10 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
         />
       </Tabs>
 
-      </Box>
+      
 
       </ThemeProvider>
+
     </section>
 
   </>

@@ -2,6 +2,11 @@ const queries = {
     getUsers: `
     SELECT * FROM alumnos
     `,
+    getAvisos: `
+    SELECT
+	    CONCAT(alumnos.nombre, ' ', alumnos.apellidos) AS nombre_alumno, alumnos.fecha_nacimiento
+    FROM alumnos
+    `,
     getPersonalData: `
     SELECT
         "alumnos".id_alumno,
@@ -85,9 +90,17 @@ const queries = {
     INNER JOIN alumnos ON facturas.id_alumno = alumnos.id_alumno	
     WHERE alumnos.dni = $1
     `,
+
     insertInteractions: `
     INSERT INTO "historico_contactos" (id_factura, fecha, motivo, comentarios) 
     VALUES ($1, TO_DATE($2, 'DD/MM/YYYY'), $3, $4)
     `
+    ,
+    updateServices: `
+    UPDATE intereses
+    SET interesado = $2
+    WHERE id_interes = $1;
+    `
 };
+
 module.exports = queries;
