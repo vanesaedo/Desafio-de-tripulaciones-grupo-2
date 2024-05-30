@@ -24,17 +24,18 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
       servicios: "",
       interacciones: "",
       contratos: "",
-      calendario: "",
     })
     const url = `http://localhost:5000/api/info/${windows}?dni=${DNIbuscado}`
     console.log(windows)
     try {
       console.log(windows)
-      const res = axios.get(url);
-
+      let res = ""
+      if(windows == "calendario") {
+        res = ""
+      } else {res = axios.get(url)}
+      
       console.log(res)
       if (windows == "datosPersonales") {
-
         res.then(response => setClienteBuscado(prev => {
           return { ...prev, datosPersonales: response.data }
         }));
@@ -46,11 +47,11 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
         res.then(response => setClienteBuscado(prev => {
           return { ...prev, interacciones: response.data }
         }));
-      } else {
+      } else if (windows == "contratos") {
         res.then(response => setClienteBuscado(prev => {
           return { ...prev, contratos: response.data }
         }));
-      }
+      } else null
 
     } catch {
       console.log("ERROR: NOT FOUND");

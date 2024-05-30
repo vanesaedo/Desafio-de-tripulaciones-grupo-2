@@ -4,8 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import {validateEmail, validatePassword} from "../../../utils/regex";
 import UserImage from '../../../assets/user_azul.png';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+
 
 const Login = ({ logged, role }) => {
   const [email, setEmail] = useState("");
@@ -82,6 +81,7 @@ const Login = ({ logged, role }) => {
       <div className="agent">
         <img src={UserImage}></img>
         <h3>{email}</h3>
+
       </div>
       <button onClick={handleLogout}>Logout</button>
     </section>
