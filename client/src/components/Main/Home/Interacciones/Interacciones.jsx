@@ -17,7 +17,7 @@ const Interacciones = ({ clienteBuscado, setClienteBuscado, DNIbuscado }) => {
     inputFecha.current.value = ""
     inputMotivo.current.value = ""
     inputObservaciones.current.value = ""
-  }, [lanzarFecth])
+  }, [lanzarFetch])
 
 
   async function crearNuevaInteraccion() {
@@ -46,57 +46,54 @@ const Interacciones = ({ clienteBuscado, setClienteBuscado, DNIbuscado }) => {
   }, [lanzarFetch])
 
   return <section className="interacciones">
-    <article>
-     
-      <nav>
-        <button>Editar</button>
-        <button>Generar PDF</button>
-      </nav>
-
+    <article className="botonInteracciones">
+      <button>Editar</button>
+      <button>Generar PDF</button>
     </article>
 
 
     {clienteBuscado ? clienteBuscado.map((elem, i) => <article key={i} className="interaccionesCard">
-     <div className="motivo_fecha">
-        <label>Motivo:</label><br></br>
-          <select name="" defaultValue={elem.motivo} >
+      <div className="motivo_fecha">
+        <label>Motivo:</label>
+        <select name="" defaultValue={elem.motivo} >
+          <option value="Seguimiento">Seguimiento</option>
+          <option value="Ofertas">Ofertas</option>
+          <option value="Incidencias">Incidencias</option>
+        </select>
+
+        <label>Fecha:</label>
+        <input type="text" defaultValue={elem.fecha} />
+      </div>
+      <div className="observaciones">
+        <label>Observaciones:</label>
+        <textarea name="Observaciones" defaultValue={elem.observaciones}></textarea>
+      </div>
+    </article>) : <></>}
+
+
+    <article className="interaccionesCard crearInteraccion">
+      <h3>Nueva interacción</h3>
+      <div>
+        <div className="motivo_fecha">
+          <label>Motivo: </label>
+          <select name="" ref={inputMotivo}>
             <option value="Seguimiento">Seguimiento</option>
             <option value="Ofertas">Ofertas</option>
             <option value="Incidencias">Incidencias</option>
           </select>
 
-        <label>Fecha:</label><br></br>
-          <input type="text" defaultValue={elem.fecha} />
+          <label>Fecha: </label>
+          <input type="text" ref={inputFecha} placeholder="DD-MM-AAAA" />
+        </div>
       </div>
       <div className="observaciones">
-        <label>Observaciones:
-          <textarea name="Observaciones" defaultValue={elem.observaciones}></textarea>
-        </label>
-        </div>
-      </article>) : <></>}
-      
-
-      <article className="crearNuevaInteraccion">
-        <h3>Nueva interacción</h3>
-        <div>
-          <div>
-            <label>Motivo: </label>
-            <select name="" ref={inputMotivo}>
-              <option value="Seguimiento">Seguimiento</option>
-              <option value="Ofertas">Ofertas</option>
-              <option value="Incidencias">Incidencias</option>
-            </select>
-        
-            <label>Fecha: </label>
-            <input type="text" ref={inputFecha} placeholder="DD-MM-AAAA" />
-          </div>
-        </div>
         <label>Observaciones: </label>
         <textarea name="Observaciones" ref={inputObservaciones}></textarea>
-        <button onClick={() => crearNuevaInteraccion()}>Crear</button>
-      </article>
+      </div>
+      <button onClick={() => crearNuevaInteraccion()}>Crear</button>
+    </article>
 
-    </section>;
+  </section>;
 };
 
-    export default Interacciones;
+export default Interacciones;
