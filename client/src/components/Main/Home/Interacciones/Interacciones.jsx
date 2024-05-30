@@ -2,21 +2,11 @@ import { useState, useRef, useEffect } from "react";
 import axios from "axios";
 
 const Interacciones = ({ clienteBuscado, setClienteBuscado, DNIbuscado }) => {
-  const [lanzarFecth, setLanzarFetch] = useState(0)
+  const [lanzarFetch, setLanzarFetch] = useState(0)
   let inputMotivo = useRef();
   let inputFecha = useRef();
   let inputObservaciones = useRef();
   const interacc = clienteBuscado
-
-  useEffect(() => {
-    const res = axios.get(`http://localhost:5000/api/info/interacciones?dni=${DNIbuscado}`)
-    res.then(response => setClienteBuscado(prev => {
-      return {...prev, interacciones: response.data}
-    }));
-    inputFecha.current.value = ""
-    inputMotivo.current.value = ""
-    inputObservaciones.current.value = ""
-  }, [lanzarFecth])
 
   async function crearNuevaInteraccion() {
     try {
@@ -32,8 +22,16 @@ const Interacciones = ({ clienteBuscado, setClienteBuscado, DNIbuscado }) => {
     } finally {
       //Que haga un nuevo fecth para que muestre los nuevos datos 
     }
-    setLanzarFetch(lanzarFecth + 1)
+    setLanzarFetch(lanzarFetch + 1)
   };
+
+  useEffect(() => {
+    const res = axios.get(`http://localhost:5000/api/info/interacciones?dni=${DNIbuscado}`)
+    //res.then(response => setClienteBuscado(prev => {return {...prev, interacciones: response.data}}));
+    inputFecha.current.value = ""
+    inputMotivo.current.value = ""
+    inputObservaciones.current.value = ""
+  }, [lanzarFetch])
 
   return <section className="interacciones">
     <article>
