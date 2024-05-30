@@ -2,8 +2,15 @@
 @import '../utils/variables.scss';
 
 .home {
+
+min-height: 800px;
+
+
+}
+.cabecera_estudiante {
   height:100%;
   width:100%;
   background-color: whitesmoke;
   text-align: right;
+
 }

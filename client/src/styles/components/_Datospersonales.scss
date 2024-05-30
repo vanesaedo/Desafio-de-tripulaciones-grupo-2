@@ -1,11 +1,13 @@
 @import '../utils/mixins.scss';
 @import '../utils/variables.scss';
 
-.datospersonales{
-    
-    @include form ($strong-blue);
+
+
+.contenidosWindows {
+   
     padding:20%;
     width:100%; 
-    background-color: $strong-blue;
-    
+    color: $strong-blue;
+    background-color: white;
+   
 } 

@@ -58,9 +58,9 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
   };
 
 
-
   return <>
     <section className="cabecera_estudiante">
+
 
       <ThemeProvider theme={theme}>
 
@@ -104,6 +104,7 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
           onClick={() => clickWindows("calendario")}
         />
         </Tabs>
+
       </ThemeProvider>
 
     </section>

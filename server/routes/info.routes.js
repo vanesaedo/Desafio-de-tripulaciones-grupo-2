@@ -17,4 +17,6 @@ router.get('/avisos', userController.getAvisos);
 
 router.put('/sevicios', userController.getAvisos);
 
+router.post('/interacciones', userController.postInteractions)
+
 module.exports = router;

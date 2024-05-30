@@ -32,10 +32,12 @@
 .logout-bar {
     @include centered-row-layout;
     height: 18vh;
-    width:100%;
+    width:100vw;
     align-items: center;
     justify-content: space-between;
-    background-color:$strong-blue;
+    background-color:white;
+    padding:0px 12px; 
+     
 
     &>button {
         @include button-normal-blue;

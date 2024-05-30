@@ -21,7 +21,7 @@
     }
 
     .interaccionesCard  {
-        @include form ($purple);
+     
         display: flex;
         flex-direction: column;
         padding: 8px;
@@ -44,5 +44,10 @@
         &>textarea {
             height: 60px;
         }
+    }
+
+    .crearNuevaInteraccion {
+        display: flex;
+        flex-direction: column;
     }
 }

@@ -1,9 +1,7 @@
 @import '../utils/mixins.scss';
 @import '../utils/variables.scss';
 
-tab {
-
-}
+    
 .cabecera_estudiante {
     @include centered-row-layout;
     justify-content: space-between;

@@ -5,9 +5,11 @@ const theme = createTheme({
   components: {
     MuiTabs: {
       styleOverrides: {
+        
         root: {
           width:'100%', // Ajusta el ancho del contenedor de tabs
-          justifyContent:'center', // Centra las tabs horizontalmente
+          justifyContent:'flex-end', // Centra las tabs horizontalmente
+          alignContent:'flex-end'
         },
         indicator: {
           backgroundColor: '#fff', // Color de la línea del scroller
