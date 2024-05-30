@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
 import { validateEmail, validatePassword } from "../../../utils/regex"; //validacion de email y password 
+import axios from 'axios';
 
 const AdminDashboard = () => {
-
   const [users, setUsers] = useState([]);
   const [nombre, setNombre] = useState("");
   const [apellidos, setApellidos] = useState("");
@@ -53,13 +52,10 @@ const AdminDashboard = () => {
   const handlePassword = (e) => setPassword(e.target.value);
   const handleRole = (e) => setRole(e.target.value);
 
-
   const handleGetUsers = async () => { //muestra todos los usuarios
     try {
       const request = await axios.get('api/users/all');
-      console.log("AdminBoard", request);
       setUsers(request.data);
-      console.log("AdminBoard2", request.data);
     } catch (error) {
       console.log(error.message);
     }
@@ -71,7 +67,7 @@ const AdminDashboard = () => {
 
   const handleSignUp = async () => {
     try {
-      //para evitar poner la ruta completa HTTP:\\....se añade en el package Json la linea "PROXY" y esta ruta va al index.js principal
+      //Para evitar poner la ruta completa HTTP:\\....se añade en el package Json la linea "PROXY" y esta ruta va al index.js principal
       const request = await axios.post('api/users/signup', { nombre, apellidos, perfil, email, password, role, status });
       setMessage(request.data.msg);
       alert("Empleado Registrado");
@@ -103,7 +99,7 @@ const AdminDashboard = () => {
         <button onClick={()=>revokeAccess(user.email)}>Revoke Access</button><br /><br /><br />
       </ul>
     })
-  }
+  };
 
   return <div>
     <h2>Admin Dashboard</h2>
