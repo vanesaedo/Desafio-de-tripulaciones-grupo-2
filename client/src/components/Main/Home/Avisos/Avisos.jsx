@@ -48,7 +48,7 @@ const Avisos = () => {
   };
 
   return (
-    <div>
+    <article>
       <h1>Lista de Alumnos</h1>
       <ul>
         {alumnos.map((alumno, index) => {
@@ -65,7 +65,7 @@ const Avisos = () => {
           );
         })}
       </ul>
-    </div>
+    </article>
   );
 };
 

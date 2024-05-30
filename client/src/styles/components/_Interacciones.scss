@@ -1,25 +1,35 @@
 @import '../utils/mixins.scss';
 @import '../utils/variables.scss';
 
-.interacciones {
+
+.interacciones article {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 5px;
     background-color: white;
 
+    &>h1 {
+        font-size:larg;
+
+
+    }
+
     &>article {
         display: flex;
         justify-content: space-between;
         align-items: center;
        
-
-        &>div {
-            display: flex;
-            flex-direction: row;
-        }
+       
     }
+     &>nav button {
+            justify-content: flex-end;
+            @include button-normal-blue;
+            margin:5px;
+            font-size: large;
+        }
 
+  
     .interaccionesCard  {
      
         display: flex;
@@ -28,26 +38,38 @@
         border: 2px solid white;
         border-radius: 8px;
         margin-bottom: 8px;
+      
 
-        &>div {
-            display: flex;
-            justify-content: space-evenly;
-            margin-bottom: 5px;
-
-            &>div {
-                &>label {
-                    margin-right: 5px;
-                }
-            }
-        }
-
-        &>textarea {
-            height: 60px;
-        }
     }
 
-    .crearNuevaInteraccion {
-        display: flex;
-        flex-direction: column;
-    }
+
 }
+
+article {
+    display:flex;
+    flex-direction:column;
+}
+
+select {
+    height: 32px;
+}
+input {
+
+    height: 32px;
+}
+textarea {
+    width:380px;
+}
+.motivo_fecha {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    width:40vw;
+    padding: 20px;
+}
+.observaciones{
+
+    display:flex;
+    flex-direction:column;
+
+} 

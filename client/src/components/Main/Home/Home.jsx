@@ -35,7 +35,7 @@ const Home = () => {
               setClienteBuscado={setClienteBuscado}
             />
           </nav>
-          <br />
+          <br/>
           {windowsEnUso === "datosPersonales" && (
             <DatosPersonales clienteBuscado={clienteBuscado.datosPersonales} />
           )}
@@ -53,10 +53,8 @@ const Home = () => {
           )}
         </>
       )}
-      <Avisos />
+      {/* <Avisos /> */}
     </section>
-  );
-
 };
 
 export default Home;
