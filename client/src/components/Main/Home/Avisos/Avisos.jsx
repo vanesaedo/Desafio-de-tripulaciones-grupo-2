@@ -56,9 +56,9 @@ const Avisos = () => {
           const aviso = obtenerAviso(diasHastaCumpleaños);
 
           return (
-            <section>
+            <section key={index}>
               {aviso && <p>{aviso}</p>}
-              <li key={index}>
+              <li>
                 {alumno.nombre_alumno} - {new Date(alumno.fecha_nacimiento).toLocaleDateString()}
               </li>
             </section>

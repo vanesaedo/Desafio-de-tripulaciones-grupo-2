@@ -81,8 +81,7 @@ const Login = ({ logged, role }) => {
     return <section className="logout-bar">
       <div className="agent">
         <img src={UserImage}></img>
-        <h3>Andrea Smithson</h3>
-        <p>Agente</p>
+        <h3>{email}</h3>
       </div>
       <button onClick={handleLogout}>Logout</button>
     </section>
