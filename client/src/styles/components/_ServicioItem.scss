@@ -1,0 +1,13 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+
+.servicios-item {
+    @include centered-row-layout;
+    
+    border:1px solid rgb(95, 95, 97);
+    background-color:white;
+  
+    }
+
+  

@@ -13,12 +13,19 @@
 .form-todos {
     display: flex;
     flex-direction: column;
-    padding-left: 40px; 
     width: 60%; 
     padding-top:40px; 
     &>input {
         padding-left:12px;
         font-size: medium;
+        height: 32px;
+        border:0.5px solid $strong-blue;
+        border-radius:4px;
+        margin-top:4px;
+    }
+
+    &>label {
+        font-weight: 600;
     }
 }
 

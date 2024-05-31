@@ -3,7 +3,7 @@ import ServicioItem from "./ServicioItem";
 const Servicios = ({ clienteBuscado }) => {
   return <section className="servicios">
     <h1>Servicios</h1>
-    <article>
+    <article className="check-list">
     {clienteBuscado? clienteBuscado.map((elem, i) =><ServicioItem key={i} elem={elem}/> ) : <></>}
     </article>
   </section>;

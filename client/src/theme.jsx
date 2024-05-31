@@ -13,6 +13,7 @@ const theme = createTheme({
         },
         indicator: {
           backgroundColor: '#002766', // Color de la línea del scroller
+          justifyContent:'right',
         },
       },
     },

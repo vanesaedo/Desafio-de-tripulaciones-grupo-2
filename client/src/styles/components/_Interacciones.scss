@@ -1,75 +1,110 @@
 @import '../utils/mixins.scss';
 @import '../utils/variables.scss';
 
+.interacciones-todo {
+    @include centered-column-layout;
+    
+    width: 60%;
+    padding-top: 40px;
+   
+    &>nav {
+        @include nav-botones-auxiliares-contenidos;
 
-.interacciones article {
+        &>button {
+            @include button-normal-blue;
+            margin: 20px 0px;
+            margin-left: 20px;
+
+        }
+    }
+
+}
+
+.lista-interacciones {
+@include centered-column-layout;
+     
+}
+.h3-todos {
+    width:100%;
+
+}
+
+.interaccionesCard {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 5px;
-    background-color: white;
-
-    &>h1 {
-        font-size:larg;
+ 
 
 
-    }
-
-    &>article {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-       
-       
-    }
-     &>nav button {
-            justify-content: flex-end;
-            @include button-normal-blue;
-            margin:5px;
-            font-size: large;
-        }
-
-  
-    .interaccionesCard  {
-     
-        display: flex;
-        flex-direction: column;
-        padding: 8px;
-        border: 2px solid white;
-        border-radius: 8px;
-        margin-bottom: 8px;
-      
-
-    }
+width:100%;
+border:1px solid rgb(155, 152, 152); 
 
 
+margin-bottom:20px;
+border-radius: 4px;
+background-color: whitesmoke;
 }
 
-article {
-    display:flex;
-    flex-direction:column;
-}
+.motivo-fecha {
 
-select {
-    height: 32px;
-}
-input {
-
-    height: 32px;
-}
-textarea {
-    width:380px;
-}
-.motivo_fecha {
-    display:flex;
-    flex-direction:row;
+    @include centered-row-layout;
     justify-content: space-between;
-    width:40vw;
-    padding: 20px;
+    margin:20px;
+
+    &>div select {
+        height: 36px;
+        padding-left: 10px;
+        font-size: medium;
+        font-family: 'Lato';
+        border: 0.5px solid $strong-blue;
+        border-radius: 4px;
+        width: 300px;
+    }
+
+    &>div input {
+        height: 32px;
+        padding-left: 10px;
+        font-family: 'Lato';
+        border: 0.5px solid $strong-blue;
+        border-radius: 4px;
+    }
+
 }
-.observaciones{
 
-    display:flex;
-    flex-direction:column;
+.observaciones {
+    width:100%;
+    
+    &>label {
+        font-weight: 600px;
+        padding-bottom: 20px;
+        margin:20px;
+     
+    }
 
-} 
+    &>textarea {
+        height: 32px;
+        margin: 20px;
+        width: 94%;
+        height: 100px;
+        font-size: medium;
+        resize: none;
+        font-family: 'Lato';
+        border: 0.5px solid $strong-blue;
+        border-radius: 4px;
+       
+    }
+}
+.h3-nueva-interacción {
+    font-size:medium;
+    padding-left:20px;
+    padding-top:20px;
+}
+
+.boton-crear {
+    @include button-normal-blue;
+    width:94%;
+    margin-left:20px;
+    margin-bottom:20px;
+  
+
+    
+}

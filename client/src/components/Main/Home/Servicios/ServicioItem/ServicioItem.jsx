@@ -25,10 +25,11 @@ const ServicioItem = ({ elem }) => {
     enviarServicios()
   }, [checked])
 
-  return <div>
+  return <form className="servicios-item">
+    <label htmlFor={elem.interes_alumno}>{elem.interes_alumno}
     {elem.interes_alumno_bool == true ? <input type="checkbox" name={elem.interes_alumno} onChange={checkHandler} defaultChecked /> : <input type="checkbox" name={elem.interes_alumno} onChange={checkHandler}/>}
-    <label htmlFor={elem.interes_alumno}>{elem.interes_alumno}</label>
-  </div>;
+    </label>
+  </form>;
 };
 
 export default ServicioItem;

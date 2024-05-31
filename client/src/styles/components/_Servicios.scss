@@ -7,14 +7,24 @@
 
     &>article {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 40px;
-        width: 80%;
-        background-color:white;
+        flex-direction: column;
+        padding-left: 40px; 
+        width: 60%; 
+        padding-top:40px;
+
+        &>input {
+            padding-left:12px;
+            font-size: medium;
+        }
     }
    
 }
+
+
+    
+   
+
+
 .boton-servicios{
     border:8px; 
 }

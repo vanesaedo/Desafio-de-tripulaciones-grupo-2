@@ -6,7 +6,7 @@ const Interacciones = ({ clienteBuscado, setClienteBuscado, DNIbuscado }) => {
   let inputMotivo = useRef();
   let inputFecha = useRef();
   let inputObservaciones = useRef();
-  const interacc = clienteBuscado
+  const interacc = clienteBuscado;
 
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const Interacciones = ({ clienteBuscado, setClienteBuscado, DNIbuscado }) => {
     inputFecha.current.value = ""
     inputMotivo.current.value = ""
     inputObservaciones.current.value = ""
-  }, [lanzarFecth])
+  }, [lanzarFetch])
 
 
   async function crearNuevaInteraccion() {
@@ -45,58 +45,67 @@ const Interacciones = ({ clienteBuscado, setClienteBuscado, DNIbuscado }) => {
     inputObservaciones.current.value = ""
   }, [lanzarFetch])
 
-  return <section className="interacciones">
-    <article>
-     
+  return <section className="interacciones-todo">
+      <h3 className="h3-todos">Interacciones</h3>
+          <hr></hr>
+   
       <nav>
         <button>Editar</button>
         <button>Generar PDF</button>
       </nav>
 
-    </article>
+      <article className="interaccionesCard">
+        <h3 className="h3-nueva-interacción">Nueva interacción</h3>
+        <form className="lista-interacciones">
+          <div className="motivo-fecha">
+            <label >Motivo: </label>
+            <select name="" ref={inputMotivo}>
+              <option value="Seguimiento">Seguimiento</option>
+              <option value="Ofertas">Ofertas</option>
+              <option value="Incidencias">Incidencias</option>
+            </select>
+            <label>Fecha: </label>
+            <input type="text" ref={inputFecha} placeholder="DD-MM-AAAA" />
+          </div>
+        <div className="observaciones">
+        <label>Observaciones: </label>
+        <textarea name="Observaciones" ref={inputObservaciones}></textarea>
 
+        </div>
+       
+        <button className="boton-crear" onClick={() => crearNuevaInteraccion()}>Crear</button>
+      
+        </form>
+      </article>
 
+<form className="lista-interacciones">
     {clienteBuscado ? clienteBuscado.map((elem, i) => <article key={i} className="interaccionesCard">
-     <div className="motivo_fecha">
+     <div className="motivo-fecha">
+      <div>
+        <label>Fecha:</label><br></br>
+          <input type="text" defaultValue={elem.fecha} />
+        </div>
+      <div>
         <label>Motivo:</label><br></br>
           <select name="" defaultValue={elem.motivo} >
             <option value="Seguimiento">Seguimiento</option>
             <option value="Ofertas">Ofertas</option>
             <option value="Incidencias">Incidencias</option>
           </select>
-
-        <label>Fecha:</label><br></br>
-          <input type="text" defaultValue={elem.fecha} />
+        </div>
+        
       </div>
+
       <div className="observaciones">
-        <label>Observaciones:
+        <label>Observaciones:  </label><br></br>
           <textarea name="Observaciones" defaultValue={elem.observaciones}></textarea>
-        </label>
+      
         </div>
       </article>) : <></>}
       
-
-      <article className="crearNuevaInteraccion">
-        <h3>Nueva interacción</h3>
-        <div>
-          <div>
-            <label>Motivo: </label>
-            <select name="" ref={inputMotivo}>
-              <option value="Seguimiento">Seguimiento</option>
-              <option value="Ofertas">Ofertas</option>
-              <option value="Incidencias">Incidencias</option>
-            </select>
-        
-            <label>Fecha: </label>
-            <input type="text" ref={inputFecha} placeholder="DD-MM-AAAA" />
-          </div>
-        </div>
-        <label>Observaciones: </label>
-        <textarea name="Observaciones" ref={inputObservaciones}></textarea>
-        <button onClick={() => crearNuevaInteraccion()}>Crear</button>
-      </article>
+  </form>
+      
 
     </section>;
 };
-
     export default Interacciones;
